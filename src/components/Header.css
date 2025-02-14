@@ -1,0 +1,174 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 50px;
+  background-color: #38346c;
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.header_firstdivlogo {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 600px;
+}
+
+.header_logout_container {
+  margin-right: 100px;
+  margin-top: 5px;
+  gap: 20px;
+}
+
+
+.date_time {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.support_button {
+  padding: 8px 25px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  /* color: #fff; */
+  color: #ffa444;
+  font-size: 17px;
+
+}
+
+
+.logout_button {
+  padding: 8px 15px;
+  background-color: #ffa444;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
+}
+
+.logout_button:hover {
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
+.header_rightside_logo {
+  width: 130px;
+  height: 50px;
+  background: none;
+}
+
+
+/***********************  Support ************/
+
+
+.support_button {
+  position: relative;
+  z-index: 1;
+}
+
+.support_page {
+  position: fixed;
+  top: 5.3%;
+  left: 70%;
+  z-index: 2;
+  width: 25%;
+  height: 30%;
+  display: none;
+  background-color: #f4faff;
+}
+
+.support_page {
+  display: block;
+  border-radius: 5px;
+}
+
+
+.Support_Container {
+  padding: 25px;
+
+}
+
+.contact_details_container {
+  line-height: 20px;
+
+}
+
+.contact_details {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #38346c;
+  margin-top: 20px;
+  word-spacing: 2px;
+  font-weight: 600;
+}
+
+.contactdetails_heading {
+  color: #ffa444;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.contact_email {
+  color: #38346c;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 2px;
+}
+
+.contact_phone {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #38346c;
+  font-size: 20px;
+}
+
+.contact_phone:hover {
+  color: #ffa444;
+}
+
+.contact_email:hover {
+  color: #ffa444;
+}
+
+.location_details {
+  display: flex;
+}
+
+.location_icon {
+  width: 30px;
+  height: 30px;
+  margin: 20px 10px 0px 0px;
+
+}
+
+.mail_icon {
+  width: 20px;
+  height: 20px;
+  margin: 10px 10px 0px 5px;
+}
+
+.call_icon {
+  width: 25px;
+  height: 25px;
+  margin: 10px 10px 0px 5px;
+}
+
+.phone_container {
+  gap: 20px;
+}
