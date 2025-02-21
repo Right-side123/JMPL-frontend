@@ -6,6 +6,7 @@ import * as XLSX from 'xlsx';
 import 'font-awesome/css/font-awesome.min.css';
 import Header from './Header';
 import Footer from './Footer';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const AgentDetailPage = () => {
     const { agentName } = useParams();
@@ -49,7 +50,7 @@ const AgentDetailPage = () => {
 
         try {
             const response = await axios.get(
-                `http://localhost:7700/api/cdr/${agentName}`,
+                `${API_URL}/cdr/${agentName}`,
                 {
                     params: {
                         startDate,
@@ -97,7 +98,7 @@ const AgentDetailPage = () => {
             'S.N.', 'Call Date/Time', 'Call-Type', 'Customer-Number',
             'Agent', 'Agent-Dial-Start', 'Agent-Answered-At', 'Agent-Disconnected-At', 'Agent-Duration', 'Customer-Duration',
             'Customer-Dial-Start', 'Customer-Answered-At', 'Customer-Disconnected-At', 'Agent-Disposition',
-            'Customer-Disposition', 'Recording...', 'API-Response'
+            'Customer-Disposition', 'API-Response'
         ];
         const dataWithHeaders = cdrData.map((cdr, index) => ({
             'S.N.': index + 1,
@@ -115,7 +116,6 @@ const AgentDetailPage = () => {
             'Customer-Disconnected-At': formatDate(cdr.customer_disconnected_at),
             'Agent-Disposition': cdr.agent_disposition,
             'Customer-Disposition': cdr.customer_disposition,
-            'Recording...': cdr.recording_file,
             'API-Response': cdr.api_response
 
         }));

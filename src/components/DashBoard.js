@@ -12,6 +12,7 @@ import outgoingimg from './Assets/outgoing.png';
 import missedoutgoingimg from './Assets/outgoing-missed-call.png';
 import missedimg from './Assets/missedcall.webp';
 import Footer from './Footer';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const Dashboard = () => {
 
@@ -33,7 +34,7 @@ const Dashboard = () => {
         return;
       }
       try {
-        const response = await fetch('http://localhost:7700/api/agents');
+        const response = await fetch(`${API_URL}/agents`);
         if (!response.ok) {
           throw new Error('Failed to fetch agents');
         }
@@ -57,7 +58,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch('http://localhost:7700/api/totalcdr');
+        const response = await fetch(`${API_URL}/totalcdr`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -79,7 +80,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch('http://localhost:7700/api/totalinbound');
+        const response = await fetch(`${API_URL}/totalinbound`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -99,7 +100,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch('http://localhost:7700/api/totaloutbound');
+        const response = await fetch(`${API_URL}/totaloutbound`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -119,7 +120,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch('http://localhost:7700/api/totalconnected');
+        const response = await fetch(`${API_URL}/totalconnected`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -139,7 +140,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch('http://localhost:7700/api/totalnotconnected');
+        const response = await fetch(`${API_URL}/totalnotconnected`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -159,7 +160,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch('http://localhost:7700/api/totalmissedoutbound/');
+        const response = await fetch(`${API_URL}/totalmissedoutbound/`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -179,7 +180,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch('http://localhost:7700/api/totalmissed');
+        const response = await fetch(`${API_URL}/totalmissed`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -204,7 +205,7 @@ const Dashboard = () => {
               <h1 className="dashboard_heading">Your complete contact&nbsp;center solution</h1>
 
               <div className="card-container">
-                <NavLink to="/agents" target="_blank" className="navlink_link">
+                <NavLink to="/agents" className="navlink_link">
                   <div className="card">
                     <div className='heading_container'>
                       <span className='card_heading'>Agents</span>
@@ -214,7 +215,7 @@ const Dashboard = () => {
                     <button className="dashboard-button">View Agent</button>
                   </div>
                 </NavLink>
-                <NavLink to="/cdr_report" target="_blank" className="navlink_link">
+                <NavLink to="/cdr_report" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_cdr'>
                       <span className='card_heading'>Custom CDR</span>
@@ -226,7 +227,7 @@ const Dashboard = () => {
 
                   </div>
                 </NavLink>
-                <NavLink to="/connected_calls" target="_blank" className="navlink_link">
+                <NavLink to="/connected_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_connected'>
                       <span className='card_heading'>Connected Calls</span>
@@ -238,7 +239,7 @@ const Dashboard = () => {
 
                   </div>
                 </NavLink>
-                <NavLink to="/notConnected_calls" target="_blank" className="navlink_link">
+                <NavLink to="/notConnected_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_connected'>
                       <span className='card_heading'>Not Connected Calls</span>
@@ -250,7 +251,7 @@ const Dashboard = () => {
 
                   </div>
                 </NavLink>
-                <NavLink to="/inbound_calls" target="_blank" className="navlink_link">
+                <NavLink to="/inbound_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_incoming'>
                       <span className='card_heading'>Incoming Calls</span>
@@ -263,7 +264,7 @@ const Dashboard = () => {
 
                   </div>
                 </NavLink>
-                <NavLink to="/outbound_calls" target="_blank" className="navlink_link">
+                <NavLink to="/outbound_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_incoming'>
                       <span className='card_heading'>Outgoing Calls</span>
@@ -276,7 +277,7 @@ const Dashboard = () => {
 
                   </div>
                 </NavLink>
-                <NavLink to="/missed_calls" target="_blank" className="navlink_link">
+                <NavLink to="/missed_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_failed'>
                       <span className='card_heading'>Missed Calls</span>
@@ -289,7 +290,7 @@ const Dashboard = () => {
 
                   </div>
                 </NavLink>
-                <NavLink to="/Missed_Outbound_calls" target="_blank" className="navlink_link">
+                <NavLink to="/Missed_Outbound_calls" className="navlink_link">
                   <div className="card">
                     <div className='heading_container_connected'>
                       <span className='card_heading'>Missed Outgoing Calls</span>

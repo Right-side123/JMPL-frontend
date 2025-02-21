@@ -7,6 +7,10 @@
 
 }
 
+.agentsbackdiv button {
+  margin-left: 93%;
+}
+
 .agent-content {
   padding: 10px;
   background-color: #fffaf3;

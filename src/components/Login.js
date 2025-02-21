@@ -7,6 +7,7 @@ import './Login.css';
 import rightsideLogo from './Assets/mainlogo.svg';
 import Footer from './Footer';
 import LoginHeader from './LoginHeader';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const LoginPage = () => {
   const [managerName, setManagerName] = useState('');
@@ -20,7 +21,7 @@ const LoginPage = () => {
     const managerNameLower = managerName.toLowerCase();
 
     try {
-      const response = await axios.post('http://localhost:7700/api/login', {
+      const response = await axios.post(`${API_URL}/login`, {
         manager_name: managerNameLower,
         password: password,
       });

@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './Agent.css';
 import Header from './Header';
 import Footer from './Footer';
+const API_URL = process.env.REACT_APP_API_URL;
+
 
 const AgentPage = () => {
   const [agents, setAgents] = useState([]);
@@ -12,6 +14,8 @@ const AgentPage = () => {
   const managerId = localStorage.getItem('manager_id');
   const navigate = useNavigate();
 
+  
+
   useEffect(() => {
     const fetchAgents = async () => {
       if (!managerId) {
@@ -20,7 +24,7 @@ const AgentPage = () => {
         return;
       }
       try {
-        const response = await fetch('http://localhost:7700/api/agents/');
+        const response = await fetch(`${API_URL}/agents/`);
 
         if (!response.ok) {
           throw new Error('Failed to fetch agents');
@@ -45,6 +49,10 @@ const AgentPage = () => {
   const handleAgentClick = (agentName) => {
     navigate(`/agent_details/${agentName}`);
   };
+
+  const handleBackAgents = () => {
+    navigate(-1)
+}
 
   const calculateTotals = () => {
     let totalCalls = 0;
@@ -81,7 +89,10 @@ const AgentPage = () => {
   return (
     <div>
       <Header />
+      <div className='agentsbackdiv'>
       <h2 className='agentpage_heading'>Agents</h2>
+      <button className='cdr_back_dwldbtn_back' onClick={handleBackAgents}>Back</button>
+      </div>
       <div className="agent-container">
         <div className="agent-content">
           {loading ? (

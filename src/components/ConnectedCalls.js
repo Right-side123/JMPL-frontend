@@ -5,6 +5,8 @@ import './CdrReport.css';
 import * as XLSX from 'xlsx';
 import 'font-awesome/css/font-awesome.min.css';
 import Footer from './Footer';
+import { useNavigate } from 'react-router-dom';
+const API_URL = process.env.REACT_APP_API_URL;
 
 function ConnectedCallsPage() {
     const [managerId, setManagerId] = useState('');
@@ -19,6 +21,7 @@ function ConnectedCallsPage() {
     const [noDataMessage, setNoDataMessage] = useState('');
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedRecording, setSelectedRecording] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         const storedManagerId = localStorage.getItem('manager_id');
@@ -44,7 +47,7 @@ function ConnectedCallsPage() {
 
 
         try {
-            const response = await axios.get('http://localhost:7700/api/connectedcalls', {
+            const response = await axios.get(`${API_URL}/connectedcalls`, {
                 params: {
                     startDate,
                     endDate,
@@ -88,7 +91,7 @@ function ConnectedCallsPage() {
             'S.N.', 'Call Date/Time', 'Call-Type', 'Customer-Number',
             'Agent', 'Agent-Dial-Start', 'Agent-Answered-At', 'Agent-Disconnected-At', 'Agent-Duration', 'Customer-Duration',
             'Customer-Dial-Start', 'Customer-Answered-At', 'Customer-Disconnected-At', 'Agent-Disposition',
-            'Customer-Disposition', 'Recording...', 'API-Response'
+            'Customer-Disposition', 'API-Response'
         ];
         const dataWithHeaders = cdrData.map((cdr, index) => ({
             'S.N.': index + 1,
@@ -106,7 +109,6 @@ function ConnectedCallsPage() {
             'Customer-Disconnected-At': formatDate(cdr.customer_disconnected_at),
             'Agent-Disposition': cdr.agent_disposition,
             'Customer-Disposition': cdr.customer_disposition,
-            'Recording...': cdr.recording_file,
             'API-Response': cdr.api_response
 
         }));
@@ -140,6 +142,10 @@ function ConnectedCallsPage() {
     const handleCloseModal = () => {
         setModalOpen(false);
     };
+
+    const handleBackAgents = () => {
+        navigate(-1)
+    }
 
     return (
         <div>
@@ -194,9 +200,12 @@ function ConnectedCallsPage() {
                 )}
 
                 {!loading && !cdrData.length && !noDataMessage && (
-                    <button onClick={fetchCdrData} disabled={loading} className='cdr_back_dwldbtn'>
-                        {loading ? 'Loading...' : 'Get Data'}
-                    </button>
+                    <div>
+                        <button className='cdr_back_dwldbtn_back' onClick={handleBackAgents}>Back</button>
+                        <button onClick={fetchCdrData} disabled={loading} className='cdr_back_dwldbtn'>
+                            {loading ? 'Loading...' : 'Get Data'}
+                        </button>
+                    </div>
                 )}
 
                 {error && <p className="error-message">{error}</p>}
