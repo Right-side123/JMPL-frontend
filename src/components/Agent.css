@@ -2,14 +2,51 @@
   width: 98%;
   margin: 10px auto;
   font-family: Arial, sans-serif;
-  height: 86vh;
+  height: 81.7vh;
   overflow-y: auto;
 
 }
 
-.agentsbackdiv button {
-  margin-left: 93%;
+.agent_back {
+  padding: 6px 10px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #38346c;
+  border: 1.5px solid #ffa444;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 20px 0px 50px;
 }
+
+.agent_back:hover {
+  background-color: #ffa444;
+  color: #38346c;
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
+.agent_dwldbtn {
+  padding: 6px 8px;
+  font-size: 16px;
+  background-color: #ffa444;
+  color: #38346c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+
+}
+
+.agent_dwldbtn:hover {
+  box-shadow: 0 2px 4px #af9d8a;
+}
+
+.buttons_container {
+  display: flex;
+  gap: 5px;
+  margin-top: 0px;
+  margin-left: 86%;
+}
+
 
 .agent-content {
   padding: 10px;

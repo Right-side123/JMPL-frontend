@@ -57,7 +57,7 @@ const Header = () => {
     });
 
     setTimeout(() => {
-      navigate('/');
+      navigate('/login');
     }, 1500);
 
   };

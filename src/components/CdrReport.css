@@ -68,6 +68,22 @@ button:disabled {
   cursor: not-allowed;
 }
 
+.dwldbtn_back{
+  padding: 0px 0px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #38346c;
+  border: 1.5px solid #ffa444;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0px 0px 0px;
+}
+
+.dwldbtn_back:hover {
+  background-color: #ffa444;
+  color: #38346c;
+  box-shadow: 0 2px 4px #af9d8a;
+}
 .download-button-container {
   display: flex;
   justify-content: flex-end;
@@ -89,7 +105,7 @@ button:disabled {
   display: flex;
   gap: 10px;
   margin-top: 0px;
-  margin-left: 90%;
+  margin-left: 89%;
 }
 
 .buttons-container button {

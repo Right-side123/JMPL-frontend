@@ -88,8 +88,8 @@ function InboundCallsPage() {
 
     const downloadExcel = () => {
         const headers = [
-            'S.N.', 'Call Date/Time', 'Call-Type', 'Customer-Number',
-            'Agent', 'Agent-Dial-Start', 'Agent-Answered-At', 'Agent-Disconnected-At', 'Agent-Duration', 'Customer-Duration',
+            'S.N.', 'Call Date/Time', 'Call-Type', 'Customer-Number', 'Agent-Name',
+            'Agent-Number', 'Agent-Dial-Start', 'Agent-Answered-At', 'Agent-Disconnected-At', 'Agent-Duration', 'Customer-Duration',
             'Customer-Dial-Start', 'Customer-Answered-At', 'Customer-Disconnected-At', 'Agent-Disposition',
             'Customer-Disposition', 'API-Response'
         ];
@@ -98,7 +98,8 @@ function InboundCallsPage() {
             'Call Date/Time': formatDate(cdr.call_datetime),
             'Call-Type': cdr.calltype,
             'Customer-Number': cdr.custphone,
-            'Agent': cdr.agent,
+            'Agent-Name': cdr.agentname,
+            'Agent-Number': cdr.agent,
             'Agent-Dial-Start': formatDate(cdr.agent_dial_start),
             'Agent-Answered-At': formatDate(cdr.agent_answered_at),
             'Agent-Disconnected-At': formatDate(cdr.agent_disconnected_at),
@@ -116,7 +117,7 @@ function InboundCallsPage() {
         const ws = XLSX.utils.aoa_to_sheet(sheetData);
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, 'CDR Data');
-        XLSX.writeFile(wb, 'CDR_Report.xlsx');
+        XLSX.writeFile(wb, 'Incomming Calls.xlsx');
     };
 
     const handleBack = () => {
@@ -201,11 +202,11 @@ function InboundCallsPage() {
 
                 {!loading && !cdrData.length && !noDataMessage && (
                     <div>
-                    <button className='cdr_back_dwldbtn_back' onClick={handleBackAgents}>Back</button>
-                    <button onClick={fetchCdrData} disabled={loading} className='cdr_back_dwldbtn'>
-                        {loading ? 'Loading...' : 'Get Data'}
-                    </button>
-                </div>
+                        <button className='cdr_back_dwldbtn_back' onClick={handleBackAgents}>Back</button>
+                        <button onClick={fetchCdrData} disabled={loading} className='cdr_back_dwldbtn'>
+                            {loading ? 'Loading...' : 'Get Data'}
+                        </button>
+                    </div>
                 )}
 
                 {error && <p className="error-message">{error}</p>}
@@ -219,7 +220,7 @@ function InboundCallsPage() {
 
                 {cdrData.length > 0 && (
                     <div className="buttons-container">
-                        <button onClick={handleBack} className='cdr_back_dwldbtn'>Back</button>
+                        <button onClick={handleBack} className='dwldbtn_back'>Back</button>
                         <button onClick={downloadExcel} className='cdr_back_dwldbtn'>Download</button>
                     </div>
                 )}
