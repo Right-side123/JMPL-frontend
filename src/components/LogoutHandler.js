@@ -11,7 +11,7 @@ const LogoutHandler = () => {
 
                 localStorage.removeItem('access_token');
                 localStorage.removeItem('manager_id');
-                navigate('/login');
+                navigate('/');
             }
         };
 

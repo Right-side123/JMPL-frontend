@@ -6,17 +6,23 @@ import Footer from './Footer';
 import * as XLSX from 'xlsx';
 const API_URL = process.env.REACT_APP_API_URL;
 
-
-
 const AgentPage = () => {
   const [agents, setAgents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const managerId = localStorage.getItem('manager_id');
   const navigate = useNavigate();
 
-
+  
+  useEffect(() => {
+    const currentDate = new Date().toISOString().split('T')[0]; 
+    setStartDate(currentDate);
+    setEndDate(currentDate);
+  }, []);
 
   useEffect(() => {
     const fetchAgents = async () => {
@@ -26,18 +32,43 @@ const AgentPage = () => {
         return;
       }
       try {
-        const response = await fetch(`${API_URL}/agents/`);
-
+    
+        const response = await fetch(`${API_URL}/agents`);
         if (!response.ok) {
           throw new Error('Failed to fetch agents');
         }
 
-        const data = await response.json();
-        const sortedAgents = data.agents.sort((a, b) => {
-          return a.agent - b.agent;
+        const allAgents = await response.json();
+
+ 
+        const callDataResponse = await fetch(`${API_URL}/agents?start_date=${startDate}&end_date=${endDate}`);
+        if (!callDataResponse.ok) {
+          throw new Error('Failed to fetch call data for the date range');
+        }
+
+        const callData = await callDataResponse.json();
+
+        
+        const callDataMap = new Map();
+        callData.agents.forEach(agent => {
+          callDataMap.set(agent.agentmobile, agent); 
         });
 
-        setAgents(sortedAgents);
+        const mergedAgents = allAgents.agents.map(agent => {
+          const callStats = callDataMap.get(agent.agentmobile) || {}; 
+          return {
+            ...agent,
+            totalCalls: callStats.totalCalls || 0,
+            totalConnected: callStats.totalConnected || 0,
+            totalNotConnected: callStats.totalNotConnected || 0,
+            totaloutbound: callStats.totaloutbound || 0,
+            totalincomming: callStats.totalincomming || 0,
+            totalMissedOutbound: callStats.totalMissedOutbound || 0,
+            totalAbandoned: callStats.totalAbandoned || 0,
+          };
+        });
+
+        setAgents(mergedAgents);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -46,17 +77,17 @@ const AgentPage = () => {
     };
 
     fetchAgents();
-  }, [managerId]);
+  }, [managerId, startDate, endDate]); 
 
   const handleAgentClick = (agentName) => {
     navigate(`/agent_details/${agentName}`);
   };
 
   const handleBackAgents = () => {
-    navigate(-1)
-  }
+    navigate(-1);
+  };
 
-  const calculateTotals = () => {
+  const calculateTotals = (agents) => {
     let totalCalls = 0;
     let totalConnected = 0;
     let totalNotConnected = 0;
@@ -65,6 +96,7 @@ const AgentPage = () => {
     let totalMissedOutbound = 0;
     let totalAbandoned = 0;
 
+   
     agents.forEach(agent => {
       totalCalls += parseInt(agent.totalCalls) || 0;
       totalConnected += parseInt(agent.totalConnected) || 0;
@@ -86,8 +118,12 @@ const AgentPage = () => {
     };
   };
 
-  const totals = calculateTotals();
+  const filteredAgents = agents.filter(agent =>
+    agent.agentname.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    agent.agentmobile.includes(searchQuery)
+  );
 
+  const totals = calculateTotals(filteredAgents); 
 
   const downloadExcel = () => {
     const headers = [
@@ -95,7 +131,7 @@ const AgentPage = () => {
       'Total Calls', 'Total Connected Calls', 'Total Not Connected Calls', 'Total Outbound Calls', 'Total Incomming Calls', 'Total Missed Outbound Calls',
       'Total Abandoned Calls'
     ];
-    const dataWithHeaders = agents.map((agent, index) => ({
+    const dataWithHeaders = filteredAgents.map((agent, index) => ({
       'S.N.': index + 1,
       'Agent Name': agent.agentname,
       'Agent Mobile No': agent.agentmobile,
@@ -108,7 +144,6 @@ const AgentPage = () => {
       'Total Incomming Calls': agent.totalincomming,
       'Total Missed Outbound Calls': agent.totalMissedOutbound,
       'Total Abandoned Calls': agent.totalAbandoned
-
     }));
 
     const totalRow = {
@@ -133,17 +168,38 @@ const AgentPage = () => {
     XLSX.writeFile(wb, 'Agents..xlsx');
   };
 
-
   return (
     <div>
       <Header />
 
-      <h2 className='agentpage_heading'>Agents</h2>
-      <div className='buttons_container'>
-        <button className='agent_back' onClick={handleBackAgents}>Back</button>
-        <button onClick={downloadExcel} className='agent_dwldbtn'>Download</button>
-
+      <h2 className="agentpage_heading">Agents</h2>
+      <div className="buttons_container">
+        <button className="agent_back" onClick={handleBackAgents}>Back</button>
+        <button onClick={downloadExcel} className="agent_dwldbtn">Download</button>
       </div>
+
+      <div className="filter-container">
+        <label>Start Date:</label>
+        <input 
+          type="date" 
+          value={startDate} 
+          onChange={(e) => setStartDate(e.target.value)} 
+        />
+        <label>End Date:</label>
+        <input 
+          type="date" 
+          value={endDate} 
+          onChange={(e) => setEndDate(e.target.value)} 
+        />
+        <label>Search:</label>
+        <input 
+          type="text" 
+          placeholder="Search by name or mobile" 
+          value={searchQuery} 
+          onChange={(e) => setSearchQuery(e.target.value)} 
+        />
+      </div>
+
       <div className="agent-container">
         <div className="agent-content">
           {loading ? (
@@ -158,7 +214,7 @@ const AgentPage = () => {
                   <th>Agent Name</th>
                   <th>Agent Mobile No</th>
                   <th>Status</th>
-                  <th className='tdregion'>Region</th>
+                  <th className="tdregion">Region</th>
                   <th>Total Calls</th>
                   <th>Total Connected</th>
                   <th>Total Not Connected</th>
@@ -169,14 +225,14 @@ const AgentPage = () => {
                 </tr>
               </thead>
               <tbody>
-                {agents.length > 0 ? (
-                  agents.map((agent, index) => (
-                    <tr key={agent.agent} onClick={() => handleAgentClick(agent.agentmobile)} className="clickable-row">
+                {filteredAgents.length > 0 ? (
+                  filteredAgents.map((agent, index) => (
+                    <tr key={agent.agentmobile} onClick={() => handleAgentClick(agent.agentmobile)} className="clickable-row">
                       <td>{index + 1}</td>
                       <td>{agent.agentname}</td>
                       <td>{agent.agentmobile}</td>
                       <td>{agent.status}</td>
-                      <td className='tdregion'>{agent.region}</td>
+                      <td className="tdregion">{agent.region}</td>
                       <td>{agent.totalCalls || 0}</td>
                       <td>{agent.totalConnected || 0}</td>
                       <td>{agent.totalNotConnected || 0}</td>
@@ -206,6 +262,7 @@ const AgentPage = () => {
           )}
         </div>
       </div>
+
       <Footer />
     </div>
   );
