@@ -2,7 +2,7 @@
   width: 98%;
   margin: 10px auto;
   font-family: Arial, sans-serif;
-  height: 81.7vh;
+  height: 79.8vh;
   overflow-y: auto;
 
 }
@@ -24,6 +24,45 @@
   box-shadow: 0 2px 4px #af9d8a;
 }
 
+.top_fields{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+  gap: 10%;
+}
+
+
+.select_type {
+  font-size: 1em;
+  font-weight: 400;
+  margin-left: 15px;
+}
+
+.select_option {
+  margin-left: 10px;
+  width: 160px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 3px;
+
+}
+
+.select_option_time{
+  font-size: 15px;
+  height: 25px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.searchbox{
+  margin-left: 10px;
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+
 .agent_dwldbtn {
   padding: 6px 8px;
   font-size: 16px;
@@ -44,7 +83,6 @@
   display: flex;
   gap: 5px;
   margin-top: 0px;
-  margin-left: 86%;
 }
 
 

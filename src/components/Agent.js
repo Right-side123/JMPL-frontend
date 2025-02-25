@@ -12,14 +12,16 @@ const AgentPage = () => {
   const [error, setError] = useState(null);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+  const [startTime, setStartTime] = useState('00:00');
+  const [endTime, setEndTime] = useState('23:59');
   const [searchQuery, setSearchQuery] = useState('');
 
   const managerId = localStorage.getItem('manager_id');
   const navigate = useNavigate();
 
-  
+
   useEffect(() => {
-    const currentDate = new Date().toISOString().split('T')[0]; 
+    const currentDate = new Date().toISOString().split('T')[0];
     setStartDate(currentDate);
     setEndDate(currentDate);
   }, []);
@@ -32,7 +34,6 @@ const AgentPage = () => {
         return;
       }
       try {
-    
         const response = await fetch(`${API_URL}/agents`);
         if (!response.ok) {
           throw new Error('Failed to fetch agents');
@@ -40,22 +41,24 @@ const AgentPage = () => {
 
         const allAgents = await response.json();
 
- 
-        const callDataResponse = await fetch(`${API_URL}/agents?start_date=${startDate}&end_date=${endDate}`);
+
+        const formattedStartDate = `${startDate} ${startTime}`;
+        const formattedEndDate = `${endDate} ${endTime}`;
+
+        const callDataResponse = await fetch(`${API_URL}/agents?start_date=${formattedStartDate}&end_date=${formattedEndDate}`);
         if (!callDataResponse.ok) {
-          throw new Error('Failed to fetch call data for the date range');
+          throw new Error('Failed to fetch call data for the selected range');
         }
 
         const callData = await callDataResponse.json();
 
-        
         const callDataMap = new Map();
         callData.agents.forEach(agent => {
-          callDataMap.set(agent.agentmobile, agent); 
+          callDataMap.set(agent.agentmobile, agent);
         });
 
         const mergedAgents = allAgents.agents.map(agent => {
-          const callStats = callDataMap.get(agent.agentmobile) || {}; 
+          const callStats = callDataMap.get(agent.agentmobile) || {};
           return {
             ...agent,
             totalCalls: callStats.totalCalls || 0,
@@ -77,7 +80,8 @@ const AgentPage = () => {
     };
 
     fetchAgents();
-  }, [managerId, startDate, endDate]); 
+  }, [managerId, startDate, endDate, startTime, endTime]);
+
 
   const handleAgentClick = (agentName) => {
     navigate(`/agent_details/${agentName}`);
@@ -96,7 +100,7 @@ const AgentPage = () => {
     let totalMissedOutbound = 0;
     let totalAbandoned = 0;
 
-   
+
     agents.forEach(agent => {
       totalCalls += parseInt(agent.totalCalls) || 0;
       totalConnected += parseInt(agent.totalConnected) || 0;
@@ -123,9 +127,17 @@ const AgentPage = () => {
     agent.agentmobile.includes(searchQuery)
   );
 
-  const totals = calculateTotals(filteredAgents); 
+  const totals = calculateTotals(filteredAgents);
+  const safeNumber = (num) => (num !== undefined && num !== null ? Number(num) : 0);
+
 
   const downloadExcel = () => {
+
+    const formattedStartDate = `${startDate} ${startTime}`;
+    const formattedEndDate = `${endDate} ${endTime}`;
+
+    const dateTimeRow = [`Selected Date-Time Range:`, `${formattedStartDate} to ${formattedEndDate}`];
+
     const headers = [
       'S.N.', 'Agent Name', 'Agent Mobile No', 'Status', 'Region',
       'Total Calls', 'Total Connected Calls', 'Total Not Connected Calls', 'Total Outbound Calls', 'Total Incomming Calls', 'Total Missed Outbound Calls',
@@ -137,13 +149,13 @@ const AgentPage = () => {
       'Agent Mobile No': agent.agentmobile,
       'Status': agent.status,
       'Region': agent.region,
-      'Total Calls': agent.totalCalls,
-      'Total Connected Calls': agent.totalConnected || 0,
-      'Total Not Connected Calls': agent.totalNotConnected,
-      'Total Outbound Calls': agent.totaloutbound,
-      'Total Incomming Calls': agent.totalincomming,
-      'Total Missed Outbound Calls': agent.totalMissedOutbound,
-      'Total Abandoned Calls': agent.totalAbandoned
+      'Total Calls': safeNumber(agent.totalCalls),
+      'Total Connected Calls': safeNumber(agent.totalConnected),
+      'Total Not Connected Calls': safeNumber(agent.totalNotConnected),
+      'Total Outbound Calls': safeNumber(agent.totaloutbound),
+      'Total Incomming Calls': safeNumber(agent.totalincomming),
+      'Total Missed Outbound Calls': safeNumber(agent.totalMissedOutbound),
+      'Total Abandoned Calls': safeNumber(agent.totalAbandoned)
     }));
 
     const totalRow = {
@@ -152,15 +164,15 @@ const AgentPage = () => {
       'Agent Mobile No': '',
       'Status': '',
       'Region': '',
-      'Total Calls': totals.totalCalls,
-      'Total Connected Calls': totals.totalConnected,
-      'Total Not Connected Calls': totals.totalNotConnected,
-      'Total Outbound Calls': totals.totalOutbound,
-      'Total Incomming Calls': totals.totalIncomming,
-      'Total Missed Outbound Calls': totals.totalMissedOutbound,
-      'Total Abandoned Calls': totals.totalAbandoned
+      'Total Calls': safeNumber(totals.totalCalls),
+      'Total Connected Calls': safeNumber(totals.totalConnected),
+      'Total Not Connected Calls': safeNumber(totals.totalNotConnected),
+      'Total Outbound Calls': safeNumber(totals.totalOutbound),
+      'Total Incomming Calls': safeNumber(totals.totalIncomming),
+      'Total Missed Outbound Calls': safeNumber(totals.totalMissedOutbound),
+      'Total Abandoned Calls': safeNumber(totals.totalAbandoned)
     };
-    const sheetData = [headers, ...dataWithHeaders.map(row => Object.values(row)),
+    const sheetData = [dateTimeRow, headers, ...dataWithHeaders.map(row => Object.values(row)),
       Object.values(totalRow)];
     const ws = XLSX.utils.aoa_to_sheet(sheetData);
     const wb = XLSX.utils.book_new();
@@ -173,31 +185,55 @@ const AgentPage = () => {
       <Header />
 
       <h2 className="agentpage_heading">Agents</h2>
-      <div className="buttons_container">
-        <button className="agent_back" onClick={handleBackAgents}>Back</button>
-        <button onClick={downloadExcel} className="agent_dwldbtn">Download</button>
-      </div>
+      <div className='top_fields'>
 
-      <div className="filter-container">
-        <label>Start Date:</label>
-        <input 
-          type="date" 
-          value={startDate} 
-          onChange={(e) => setStartDate(e.target.value)} 
-        />
-        <label>End Date:</label>
-        <input 
-          type="date" 
-          value={endDate} 
-          onChange={(e) => setEndDate(e.target.value)} 
-        />
-        <label>Search:</label>
-        <input 
-          type="text" 
-          placeholder="Search by name or mobile" 
-          value={searchQuery} 
-          onChange={(e) => setSearchQuery(e.target.value)} 
-        />
+        <div></div>
+        <div className="filter-container">
+          <label className='select_type'>Start Date:</label>
+          <input
+            className='select_option'
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          />
+
+          <input
+            className='select_option_time'
+            type="time"
+            value={startTime}
+            onChange={(e) => setStartTime(e.target.value)}
+          />
+          <label className='select_type'>End Date:</label>
+          <input className='select_option'
+            type="date"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+          />
+
+          <input
+            className='select_option_time'
+            type="time"
+            value={endTime}
+            onChange={(e) => setEndTime(e.target.value)}
+          />
+
+
+          <label className='select_type'>Search:</label>
+          <input
+            className='searchbox'
+            type="text"
+            placeholder="Search by name or mobile"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+
+
+        </div>
+
+        <div className="buttons_container">
+          <button className="agent_back" onClick={handleBackAgents}>Back</button>
+          <button onClick={downloadExcel} className="agent_dwldbtn">Download</button>
+        </div>
       </div>
 
       <div className="agent-container">
