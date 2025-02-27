@@ -23,6 +23,13 @@ function MissedOutboundCallsPage() {
     const [selectedRecording, setSelectedRecording] = useState('');
     const navigate = useNavigate();
 
+    const [callFilter, setCallFilter] = useState('all');
+
+
+    const handleFilterChange = (e) => {
+        setCallFilter(e.target.value);
+    };
+
     useEffect(() => {
         const storedManagerId = localStorage.getItem('manager_id');
         if (storedManagerId) {
@@ -55,7 +62,8 @@ function MissedOutboundCallsPage() {
                     startDate,
                     endDate,
                     startTime,
-                    endTime
+                    endTime,
+                    filter: callFilter
                 }
             });
 
@@ -200,6 +208,15 @@ function MissedOutboundCallsPage() {
                                 value={endTime}
                                 onChange={(e) => setEndTime(e.target.value)}
                             />
+                        </div>
+
+                        <div className="filter-container">
+                            <label className='select_type'>Missed By: </label>
+                            <select value={callFilter} onChange={handleFilterChange} className='select_option'>
+                                <option value="all">All</option>
+                                <option value="missedByCustomer">Customer</option>
+                                <option value="missedByAgent">Agent</option>
+                            </select>
                         </div>
                     </div>
                 )}

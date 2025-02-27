@@ -136,7 +136,8 @@ const AgentPage = () => {
     const formattedStartDate = `${startDate} ${startTime}`;
     const formattedEndDate = `${endDate} ${endTime}`;
 
-    const dateTimeRow = [`Selected Date-Time Range:`, `${formattedStartDate} to ${formattedEndDate}`];
+    const dateTimeRow = [` `, ` `, ` `, `Date-Time Range:`, `${formattedStartDate} to ${formattedEndDate}`];
+    const blankRow = [` `];
 
     const headers = [
       'S.N.', 'Agent Name', 'Agent Mobile No', 'Status', 'Region',
@@ -172,7 +173,7 @@ const AgentPage = () => {
       'Total Missed Outbound Calls': safeNumber(totals.totalMissedOutbound),
       'Total Abandoned Calls': safeNumber(totals.totalAbandoned)
     };
-    const sheetData = [dateTimeRow, headers, ...dataWithHeaders.map(row => Object.values(row)),
+    const sheetData = [dateTimeRow, blankRow, headers, ...dataWithHeaders.map(row => Object.values(row)),
       Object.values(totalRow)];
     const ws = XLSX.utils.aoa_to_sheet(sheetData);
     const wb = XLSX.utils.book_new();
