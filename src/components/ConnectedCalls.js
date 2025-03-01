@@ -24,6 +24,12 @@ function ConnectedCallsPage() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        const currentDate = new Date().toISOString().split('T')[0];
+        setStartDate(currentDate);
+        setEndDate(currentDate);
+      }, []);
+
+    useEffect(() => {
         const storedManagerId = localStorage.getItem('manager_id');
         if (storedManagerId) {
             setManagerId(storedManagerId);
@@ -91,7 +97,7 @@ function ConnectedCallsPage() {
             'S.N.', 'Call Date/Time', 'Call-Type', 'Customer-Number', 'Agent-Name',
             'Agent-Number', 'Agent-Dial-Start', 'Agent-Answered-At', 'Agent-Disconnected-At', 'Agent-Duration', 'Customer-Duration',
             'Customer-Dial-Start', 'Customer-Answered-At', 'Customer-Disconnected-At', 'Agent-Disposition',
-            'Customer-Disposition', 'API-Response'
+            'Customer-Disposition'
         ];
         const dataWithHeaders = cdrData.map((cdr, index) => ({
             'S.N.': index + 1,
@@ -109,8 +115,7 @@ function ConnectedCallsPage() {
             'Customer-Answered-At': formatDate(cdr.customer_answered_at),
             'Customer-Disconnected-At': formatDate(cdr.customer_disconnected_at),
             'Agent-Disposition': cdr.agent_disposition,
-            'Customer-Disposition': cdr.customer_disposition,
-            'API-Response': cdr.api_response
+            'Customer-Disposition': cdr.customer_disposition        
 
         }));
         const sheetData = [headers, ...dataWithHeaders.map(row => Object.values(row))];

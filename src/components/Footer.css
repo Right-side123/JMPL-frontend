@@ -1,6 +1,6 @@
 .page_footer {
     padding: 5px 40px;
-    height: 35px;
+    height: 40px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -11,12 +11,20 @@
     position: fixed;
 }
 
+.page_footer_fixed{
+    margin-top: 4px;
+    font-weight: bold;
+}
+
 .footer_content {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+}
+
+.icon_container{
+    margin-top: 4px;
 }
 
 .footer_content:hover {

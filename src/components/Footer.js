@@ -20,7 +20,7 @@ const Footer = () => {
                         <img src={facebookimg} className='facebookicon' alt='facebook' />
                     </a>
                 </div>
-                <div className="page_footer_fixed"> 2024 ©
+                <div className="page_footer_fixed"> 2025 ©
                     <a href="https://www.rightside.co.in" target='blank' className="footer_content">
                         <span> Powered by RIGHT SIDE BUSINESS SOLUTIONS PRIVATE LIMITED</span>
                     </a>

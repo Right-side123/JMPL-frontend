@@ -17,14 +17,31 @@ const AgentDetailPage = () => {
     const [endDate, setEndDate] = useState('');
     const [startTime, setStartTime] = useState('00:00');
     const [endTime, setEndTime] = useState('23:59');
-    const [selectedCallType, setSelectedCallType] = useState('all');
-    const [selectedDisposition, setSelectedDisposition] = useState('all');
+    // const [selectedCallType, setSelectedCallType] = useState('all');
+    // const [selectedDisposition, setSelectedDisposition] = useState('all');
     const [showDateSelector, setShowDateSelector] = useState(true);
     const [noDataMessage, setNoDataMessage] = useState('');
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedRecording, setSelectedRecording] = useState('');
     const [managerId, setManagerId] = useState(null);
     const navigate = useNavigate();
+
+    const [callStatus, setCallStatus] = useState('all');
+    const [callType, setCallType] = useState('all');
+
+    const handleStatusChange = (e) => {
+        setCallStatus(e.target.value);
+    };
+
+    const handleCallTypeChange = (e) => {
+        setCallType(e.target.value);
+    }
+
+    useEffect(() => {
+        const currentDate = new Date().toISOString().split('T')[0];
+        setStartDate(currentDate);
+        setEndDate(currentDate);
+      }, []);
 
     useEffect(() => {
         const storedManagerId = localStorage.getItem('manager_id');
@@ -57,8 +74,10 @@ const AgentDetailPage = () => {
                         endDate,
                         startTime,
                         endTime,
-                        calltype: selectedCallType === 'all' ? undefined : selectedCallType,
-                        agentDisposition: selectedDisposition === 'all' ? undefined : selectedDisposition,
+                        status: callStatus,
+                        calltype: callType
+                        // calltype: selectedCallType === 'all' ? undefined : selectedCallType,
+                        // agentDisposition: selectedDisposition === 'all' ? undefined : selectedDisposition,
                     },
                 }
             );
@@ -98,7 +117,7 @@ const AgentDetailPage = () => {
             'S.N.', 'Call Date/Time', 'Call-Type', 'Customer-Number', 'Agent-Name',
             'Agent-Number', 'Agent-Dial-Start', 'Agent-Answered-At', 'Agent-Disconnected-At', 'Agent-Duration', 'Customer-Duration',
             'Customer-Dial-Start', 'Customer-Answered-At', 'Customer-Disconnected-At', 'Agent-Disposition',
-            'Customer-Disposition', 'API-Response'
+            'Customer-Disposition'
         ];
         const dataWithHeaders = cdrData.map((cdr, index) => ({
             'S.N.': index + 1,
@@ -116,8 +135,7 @@ const AgentDetailPage = () => {
             'Customer-Answered-At': formatDate(cdr.customer_answered_at),
             'Customer-Disconnected-At': formatDate(cdr.customer_disconnected_at),
             'Agent-Disposition': cdr.agent_disposition,
-            'Customer-Disposition': cdr.customer_disposition,
-            'API-Response': cdr.api_response
+            'Customer-Disposition': cdr.customer_disposition
 
         }));
         const sheetData = [headers, ...dataWithHeaders.map(row => Object.values(row))];
@@ -205,11 +223,11 @@ const AgentDetailPage = () => {
                             <div className='label_container'>
                                 <label className='select_type'>Call Type:</label>
                                 <select
-                                    value={selectedCallType}
-                                    onChange={(e) => setSelectedCallType(e.target.value)}
+                                    value={callType}
+                                    onChange={handleCallTypeChange}
                                     className='select_option'>
                                     <option value="all">All</option>
-                                    <option value="Incomming Call">Incomming Call</option>
+                                    <option value="incommingCall">Incomming Call</option>
                                     <option value="outbound">Outbound</option>
                                 </select>
                             </div>
@@ -217,12 +235,12 @@ const AgentDetailPage = () => {
                             <div>
                                 <label className='select_type'>Call Status:</label>
                                 <select
-                                    value={selectedDisposition}
-                                    onChange={(e) => setSelectedDisposition(e.target.value)}
+                                    value={callStatus}
+                                    onChange={handleStatusChange}
                                     className='select_option'>
                                     <option value="all">All</option>
-                                    <option value="ANSWERED">Answered</option>
-                                    <option value="NO ANSWER">No Answer</option>
+                                    <option value="connected">Connected</option>
+                                    <option value="notConnected">Not Connected</option>
                                 </select>
                             </div>
                         </div>
