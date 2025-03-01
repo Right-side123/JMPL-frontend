@@ -31,9 +31,10 @@ function MissedOutboundCallsPage() {
     };
 
     useEffect(() => {
-        const currentDate = new Date().toISOString().split('T')[0];
-        setStartDate(currentDate);
-        setEndDate(currentDate);
+        const currentDate = new Date();
+        const localDate = currentDate.toLocaleDateString('en-CA'); 
+        setStartDate(localDate);
+        setEndDate(localDate);
       }, []);
 
     useEffect(() => {

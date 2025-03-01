@@ -24,10 +24,11 @@ function ConnectedCallsPage() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const currentDate = new Date().toISOString().split('T')[0];
-        setStartDate(currentDate);
-        setEndDate(currentDate);
-      }, []);
+        const currentDate = new Date();
+        const localDate = currentDate.toLocaleDateString('en-CA');
+        setStartDate(localDate);
+        setEndDate(localDate);
+    }, []);
 
     useEffect(() => {
         const storedManagerId = localStorage.getItem('manager_id');
@@ -115,7 +116,7 @@ function ConnectedCallsPage() {
             'Customer-Answered-At': formatDate(cdr.customer_answered_at),
             'Customer-Disconnected-At': formatDate(cdr.customer_disconnected_at),
             'Agent-Disposition': cdr.agent_disposition,
-            'Customer-Disposition': cdr.customer_disposition        
+            'Customer-Disposition': cdr.customer_disposition
 
         }));
         const sheetData = [headers, ...dataWithHeaders.map(row => Object.values(row))];
