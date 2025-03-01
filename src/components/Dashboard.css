@@ -144,3 +144,85 @@
   display: flex;
   gap: 30px;
 }
+
+
+@media (max-width:1100px){
+  .dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    background-color: #fffaf3;
+  }
+
+  .card {
+    height: 20vh;
+    width: 20vw;
+    
+
+    padding: 8px;
+   
+
+  }
+
+  .dashboard-content {
+    text-align: center;
+    width: 100%;
+    margin-top: -250px;
+    height: 75vh;
+
+  }
+
+  .dashboard_heading {
+    font-size: 18px;
+  }
+
+  .card_heading {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .card h3 {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .card p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-button {
+    padding: 0px 0px;
+    height: 22px;
+    width: 70px;
+    font-size: 10px;
+  }
+
+  .failedpng {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  .cdrpng {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+  
+  .cdr_png {
+    width: 25px;
+    height: 25px;
+  }
+
+  .incomingpng {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  .agentpng {
+    width: 30px;
+  }
+}
