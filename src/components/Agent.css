@@ -161,12 +161,12 @@ p {
 }
 
 
-@media (min-width: 1224px){
+@media (max-width:1350px){
   .agent-container {
     width: 98%;
     margin: 10px auto;
     font-family: Arial, sans-serif;
-    height: 79vh;
+    height: 73vh;
     overflow-y: auto;
   
   }
@@ -180,6 +180,14 @@ p {
     border-radius: 5px;
     cursor: pointer;
     margin: 10px 20px 0px 50px;
+  }
+
+  .searchbox{
+    margin-left: 10px;
+    width: 100px;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 3px;
   }
   
   .agent_back:hover {
@@ -204,7 +212,7 @@ p {
   
   .select_option {
     margin-left: 10px;
-    width: 160px;
+    width: 120px;
     height: 25px;
     font-size: 15px;
     border-radius: 3px;

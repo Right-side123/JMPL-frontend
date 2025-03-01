@@ -212,7 +212,7 @@ const Dashboard = () => {
                       <img src={agentimg} alt='agent' className='agentpng' />
                     </div>
                     <p>Total agents: {agents.length}</p>
-                    <button className="dashboard-button">View Agent</button>
+                    <button className="dashboard-button">Click here</button>
                   </div>
                 </NavLink>
                 <NavLink to="/cdr_report" className="navlink_link">
@@ -223,7 +223,7 @@ const Dashboard = () => {
                     </div>
                     <p>Total CDR: {totalCdr}</p>
 
-                    <button className="dashboard-button">View CDR</button>
+                    <button className="dashboard-button">Click here</button>
 
                   </div>
                 </NavLink>
@@ -260,7 +260,7 @@ const Dashboard = () => {
                     {/* <h3>Incoming Calls</h3> */}
                     <p>Total incoming call's: {totalInbound}</p>
 
-                    <button className="dashboard-button">View Calls</button>
+                    <button className="dashboard-button">Click here</button>
 
                   </div>
                 </NavLink>
@@ -273,7 +273,7 @@ const Dashboard = () => {
                     {/* <h3>Outgoing Calls</h3> */}
                     <p>Total outgoing call's: {outgoingCalls}</p>
 
-                    <button className="dashboard-button">View Calls</button>
+                    <button className="dashboard-button">Click here</button>
 
                   </div>
                 </NavLink>
@@ -286,7 +286,7 @@ const Dashboard = () => {
                     {/* <h3>Failed Calls</h3> */}
                     <p>Total missed call's: {missedCalls}</p>
 
-                    <button className="dashboard-button">View Calls</button>
+                    <button className="dashboard-button">Click here</button>
 
                   </div>
                 </NavLink>
@@ -299,7 +299,7 @@ const Dashboard = () => {
                     {/* <h3>Failed Calls</h3> */}
                     <p>Total failed call's: {failedCalls}</p>
 
-                    <button className="dashboard-button">View Calls</button>
+                    <button className="dashboard-button">Click here</button>
 
                   </div>
                 </NavLink>
