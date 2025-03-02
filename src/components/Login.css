@@ -96,7 +96,7 @@
 
 
 
-@media (max-width:1350px){
+@media (max-width:1024px){
     .login-container {
         display: flex;
         justify-content: center;

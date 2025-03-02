@@ -2,17 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: auto;
+  min-height: 90vh;
   background-color: #fffaf3;
+  padding: 20px;
 }
-
 
 .dashboard-content {
   text-align: center;
   max-width: 1000px;
   width: 100%;
-  padding: 100px;
-  margin-top: -200px;
+  padding: 50px;
 }
 
 .dashboard_heading {
@@ -20,6 +20,7 @@
   text-transform: uppercase;
   font-size: 21pt;
   font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .card-container {
@@ -31,7 +32,7 @@
 
 .card {
   height: 155px;
-  width: 300px;
+  width: 100%;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -83,7 +84,7 @@
 }
 
 .card_heading {
-  font-size: 22px;
+  font-size: 19px;
   font-weight: bold;
 }
 
@@ -114,7 +115,7 @@
 
 .heading_container_connected {
   position: relative;
-  margin-left: 10%;
+  margin-left: 15%;
   display: flex;
   gap: 10px;
 }
@@ -127,7 +128,7 @@
 
 .heading_container_incoming {
   position: relative;
-  margin-left: 15%;
+  margin-left: 18%;
   display: flex;
   gap: 20px;
 }
@@ -145,32 +146,103 @@
   gap: 30px;
 }
 
+/* ************************************   ************************                                    ************************************ */
 
-@media (max-width:1350px){
+/* **********************************************        screens with max-width: 1024px ******************************************* */
+/* ************************************   ************************                                    ************************************ */
+
+@media (max-width: 1024px) {
   .dashboard-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    background-color: #fffaf3;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px;
+    height: auto;
   }
 
   .card {
-    height: 18vh;
-    width: 19vw;
-    padding: 10px;
+    height: auto;
+    width: 90%;
+    padding: 15px;
+  }
+
+  .dashboard-content {
+    padding: 30px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .dashboard_heading {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .card_heading {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .dashboard-button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .failedpng,
+  .cdrpng,
+  .incomingpng,
+  .agentpng {
+    width: 30px;
+    height: 30px;
+  }
+
+  .heading_container {
+    margin-left: 0%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .heading_container_cdr {
+    margin-left: 10%;
+  }
+
+  .heading_container_connected,
+  .heading_container_incoming,
+  .heading_container_failed {
+    margin-left: 10%;
+    display: flex;
+    gap: 15px;
+  }
+}
+
+/*************************************************                                                             ******************************************************* */
+/* *************************************************         For smaller mobile screens with max-width: 768px   ********************************************************  */
+/*************************************************                                                             ******************************************************* */
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    display: block;
+    justify-content: center;
+    padding: 15px;
   }
 
   .dashboard-content {
     text-align: center;
     width: 100%;
-    margin-top: -250px;
-    height: 75vh;
-
+    padding: 15px;
   }
 
   .dashboard_heading {
-    font-size: 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    height: 200px;
+    width: 100%;
+    padding: 10px;
   }
 
   .card_heading {
@@ -178,62 +250,105 @@
     font-weight: bold;
   }
 
-  
   .card p {
-    font-size: 14px;
-    margin-bottom: 10px;
-    margin-top: 5px;
+    font-size: 12px;
+    margin-bottom: 5px;
   }
-  
+
   .dashboard-button {
-    padding: 8px 10px;
-    /* height: 22px; */
-    /* width: 70px; */
+    padding: 6px 12px;
     font-size: 10px;
   }
 
-  .failedpng {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-  }
-
-  .cdrpng {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-  }
-  
-  .cdr_png {
-    width: 25px;
-    height: 25px;
-  }
-
-  .incomingpng {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-  }
-
+  .failedpng,
+  .cdrpng,
+  .incomingpng,
   .agentpng {
-    width: 30px;
+    width: 25px;
+    height: 25px;
   }
 
-  .heading_container_connected {
-    position: relative;
-    margin-left: 18%;
+  .heading_container {
+    margin-left: 5%;
     display: flex;
     gap: 10px;
   }
 
-  .heading_container_cdr {
-    margin-left: 30%;
+  .heading_container_cdr,
+  .heading_container_connected,
+  .heading_container_incoming,
+  .heading_container_failed {
+    margin-left: 5%;
+    display: flex;
+    gap: 10px;
+  }
+}
+
+
+/* *******************************                                                         ************************************************************* */
+/************************************************************** For mobile screens (smaller than 480px) **************************************** */
+/* *******************************                                                         ************************************************************* */
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    display: block;
+    justify-content: center;
+    padding: 10px;
   }
 
-  .heading_container_incoming {
-    position: relative;
-    margin-left: 25%;
+  .dashboard-content {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .dashboard_heading {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .card {
+    height: 180px;
+    /* Adjusted height */
+    width: 100%;
+    padding: 8px;
+  }
+
+  .card_heading {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .card p {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
+  .dashboard-button {
+    padding: 5px 10px;
+    font-size: 8px;
+  }
+
+  .failedpng,
+  .cdrpng,
+  .incomingpng,
+  .agentpng {
+    width: 20px;
+    height: 20px;
+  }
+
+  .heading_container {
+    margin-left: 0%;
     display: flex;
-    gap: 20px;
+    gap: 5px;
+  }
+
+  .heading_container_cdr,
+  .heading_container_connected,
+  .heading_container_incoming,
+  .heading_container_failed {
+    margin-left: 0%;
+    display: flex;
+    gap: 5px;
   }
 }

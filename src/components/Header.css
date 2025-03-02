@@ -6,20 +6,22 @@
   height: 50px;
   width: 100%;
   background-color: #38346c;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .header_content {
   display: flex;
   justify-content: space-between;
   width: 100%;
-
 }
 
 .header_firstdivlogo {
   position: relative;
   display: flex;
   justify-content: space-around;
-  /* width: 600px; */
   width: 65vh;
 }
 
@@ -29,7 +31,6 @@
   gap: 20px;
 }
 
-
 .date_time {
   font-size: 14px;
   font-weight: 400;
@@ -38,19 +39,15 @@
   font-family: 'Roboto', sans-serif;
 }
 
-
 .support_button {
   padding: 8px 25px;
   background: none;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  /* color: #fff; */
   color: #ffa444;
   font-size: 17px;
-
 }
-
 
 .logout_button {
   padding: 8px 15px;
@@ -72,9 +69,7 @@
   background: none;
 }
 
-
-/***********************  Support ************/
-
+/*********************** *************************               Support          ********************* *****************************/
 
 .support_button {
   position: relative;
@@ -97,15 +92,12 @@
   border-radius: 5px;
 }
 
-
 .Support_Container {
   padding: 25px;
-
 }
 
 .contact_details_container {
   line-height: 20px;
-
 }
 
 .contact_details {
@@ -156,7 +148,6 @@
   width: 30px;
   height: 30px;
   margin: 20px 10px 0px 0px;
-
 }
 
 .mail_icon {
@@ -175,42 +166,104 @@
   gap: 20px;
 }
 
-@media (max-width:1350px){
+/* *******************************************************                                      ******************************************************************
+***********************                                                 Adjustments for smaller screens   *****************************************
+*********************************************************                                                       *********************************              ************/
+
+@media (max-width: 1024px) {
   .header {
-    height: 35px;
-  
+    height: 40px;
+    padding: 5px 15px;
   }
 
   .header_firstdivlogo {
-    width: 70vh;
+    width: 50vh;
+  }
+
+  .date_time {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .support_button {
+    padding: 7px 20px;
+    font-size: 14px;
+  }
+
+  .logout_button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .header_rightside_logo {
+    width: 90px;
+  }
+}
+
+/*           *****************                *******************               ***  *   ***                ***********************             ******************         */
+/* ************************************************                smaller screens like tablets and mobile             *********************************** */
+/*           *****************                *******************               ***  *   ***                ***********************             ******************         */
+
+@media (max-width: 768px) {
+  .header {
+    height: 35px;
+    padding: 5px 10px;
+  }
+
+  .header_firstdivlogo {
+    width: 45vh;
   }
 
   .date_time {
     font-size: 10px;
-    font-weight: 400;
-    color: #fff;
-    margin-top: 20px;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  
-  .support_button {
-    padding: 10px 25px;
-    font-size: 13px;
-  
+    margin-top: 5px;
   }
 
-  .header_rightside_logo {
-    width: 100px;
+  .support_button {
+    padding: 5px 15px;
+    font-size: 12px;
   }
 
   .logout_button {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .header_rightside_logo {
+    width: 80px;
+  }
+}
+
+/* ******************************************************************************************************************************************************* */
+/************                                           mobile screens (smaller than 480px)                                  ********************* */
+/* ******************************************************************************************************************************************************* */
+
+@media (max-width: 480px) {
+  .header {
+    height: 30px;
+    padding: 5px 8px;
+  }
+
+  .header_firstdivlogo {
+    width: 40vh;
+  }
+
+  .date_time {
+    font-size: 8px;
+    margin-top: 2px;
+  }
+
+  .support_button {
     padding: 4px 10px;
-    background-color: #ffa444;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: #fff;
-    font-size: 12px;
+    font-size: 10px;
+  }
+
+  .logout_button {
+    padding: 4px 8px;
+    font-size: 8px;
+  }
+
+  .header_rightside_logo {
+    width: 70px;
   }
 }
