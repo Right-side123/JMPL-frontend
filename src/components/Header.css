@@ -200,6 +200,45 @@
   }
 }
 
+/* **********************
+*************************************
+************************************************************ */
+
+@media (max-width: 1090px) {
+  .header {
+    height: 35px;
+    padding: 5px 20px;
+  }
+
+  .header_firstdivlogo {
+    width: 50vh;
+    margin-left: 50px;
+  }
+
+  .date_time {
+    font-size: 12px;
+    margin-top: 18px;
+  }
+
+  .support_button {
+    padding: 7px 20px;
+    font-size: 14px;
+  }
+
+  .logout_button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .header_rightside_logo {
+    width: 90px;
+  }
+
+  .header_logout_container{
+    margin-top: 10px;
+  }
+}
+
 /*           *****************                *******************               ***  *   ***                ***********************             ******************         */
 /* ************************************************                smaller screens like tablets and mobile             *********************************** */
 /*           *****************                *******************               ***  *   ***                ***********************             ******************         */
@@ -266,4 +305,45 @@
   .header_rightside_logo {
     width: 70px;
   }
+}
+
+
+@media (max-width:700px) and (min-width:300px){
+  .header {
+    height: 30px;
+    padding: 5px 8px;
+  }
+
+  .header_firstdivlogo {
+    width: 30vh;
+    margin-left: 0px
+  }
+
+  .date_time {
+    font-size: 8px;
+    margin-top: 20px;
+  }
+
+  .support_button {
+    padding: 4px 10px;
+    font-size: 10px;
+    margin-left: 0%
+  }
+
+  .logout_button {
+    padding: 4px 8px;
+    font-size: 8px;
+  }
+
+  .header_rightside_logo {
+    width: 70px;
+  }
+
+  .header_logout_container {
+    margin-right: 30px;
+    margin-top: 10px;
+    gap: 20px;
+  }
+
+ 
 }

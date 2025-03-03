@@ -480,6 +480,204 @@ td:nth-child(22) {
   }
 }
 
+@media (max-width: 1024px) {
+  .cdr_buttons_container {
+    margin-right: 30px;
+  }
+
+  .buttons-container {
+    margin-left: 80%;
+  }
+
+  .cdr_table {
+    max-height: 600px;
+  }
+
+  input[type="date"] {
+    width: 180px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .cdr_buttons_container {
+    margin-right: 30px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .date-input-container {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .buttons-container {
+    margin-left: 80%;
+  }
+
+  .cdr_table {
+    max-height: 600px;
+  }
+
+  input[type="date"] {
+    width: 150px;
+  }
+
+  .select_time {
+    width: 110px;
+  }
+
+  .cdr_back_dwldbtn_back {
+    padding: 6px 18px;
+    font-size: 14px;
+  }
+
+  .cdr_back_dwldbtn {
+    padding: 7px 12px;
+    font-size: 14px;
+  }
+
+  .cdr_table {
+    max-height: 420px;
+  }
+
+  td,
+  th {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  td:first-child,
+  th:first-child {
+    width: 150px;
+    text-align: center;
+  }
+
+  td:last-child,
+  th:last-child {
+    width: 120px;
+    text-align: center;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+  
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    height: 30px;
+    width: 90px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    margin-top: -40px;
+    height: 93vh;
+  }
+
+  .missedpage_heading {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  
+  .missedCdrPage {
+    padding: 12px;
+    text-align: center;
+    height: 91vh;
+  }
+
+  .connectedpage_heading {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .ConnectedCdrPage {
+    padding: 11px;
+    text-align: center;
+    margin-top: 9px;
+    height: 92vh;
+  }
+
+  .NotConnectedCdrPage {
+    padding: 12px;
+    text-align: center;
+    height: 91vh;
+  }
+  
+  .notconnectedpage_heading {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .inboundCdrPage {
+    padding: 12px;
+    text-align: center;
+    height: 91vh;
+  }
+  
+  .inboundpage_heading {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .outboundCdrPage {
+    padding: 12px;
+    text-align: center;
+    height: 91vh;
+  }
+  
+  .outboundpage_heading {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .failedCdrPage {
+    padding: 12px;
+    text-align: center;
+    height: 91vh;
+  }
+  
+  .failedpage_heading {
+    font-size: 20px;
+    margin-top: 30px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  .select_option {
+    width: 120px;
+  }
+
+  .singleAgent_heading {
+    font-size: 20px;
+    margin-top: 70px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  .label_container {
+    margin-bottom: 15px;
+  }
+}
+
 @media (max-width: 992px) {
   .cdr_table {
     max-height: 550px;
@@ -525,5 +723,37 @@ td:nth-child(22) {
 
   .buttons-container {
     margin-left: 40%;
+  }
+}
+
+
+
+
+@media (max-width: 700px) and (min-width: 300px){
+  .cdr_table {
+    max-height: 510px;
+  }
+
+  .modal {
+    position: fixed;
+    top: 50vh;
+    left: 0%;
+    width: 300px;
+    height: 100px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 0%;
+    max-width: 0px;
+    text-align: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 }

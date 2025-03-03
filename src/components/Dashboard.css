@@ -1,3 +1,8 @@
+body{
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
 .dashboard-container {
   display: flex;
   justify-content: center;
@@ -217,6 +222,152 @@
   }
 }
 
+
+/* ********************************
+*********************************************
+************************************************************************************ */
+
+
+@media (max-width: 1090px) {
+  .dashboard-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 18px;
+    height: auto;
+  }
+
+
+  .card {
+    height: auto;
+    width: 75%;
+    padding: 10px;
+  }
+
+  .dashboard-content {
+    padding: 40px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .dashboard_heading {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .card_heading {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+
+  .dashboard-button {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .failedpng,
+  .cdrpng,
+  .incomingpng,
+  .agentpng,
+  .cdr_png {
+    width: 25px;
+    height: 25px;
+  }
+
+  .heading_container {
+    margin-left: 38%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .heading_container_cdr {
+    margin-left: 22%;
+  }
+
+  .heading_container_connected,
+  .heading_container_incoming,
+  .heading_container_failed {
+    margin-left: 18%;
+    display: flex;
+    gap: 10px;
+  }
+}
+
+
+
+/*      **************************        *************************                      ***********************************             **********  */
+/* ****************     ******        ****          ****     Screen size max-width 1400 screen   *****    ****    **************     ********************* */
+/*      **************************        *************************                      ***********************************             **********  */
+
+@media (max-width: 1390) {
+  .dashboard-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px;
+    height: auto;
+  }
+
+  .card {
+    height: auto;
+    width: 90%;
+    padding: 15px;
+  }
+
+  .dashboard-content {
+    padding: 30px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .dashboard_heading {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .card_heading {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+
+  .dashboard-button {
+    padding: 6px 14px;
+    font-size: 10px;
+  }
+
+  .failedpng,
+  .cdrpng,
+  .incomingpng,
+  .agentpng {
+    width: 25px;
+    height: 25px;
+  }
+
+  .heading_container {
+    margin-left: 0%;
+    display: flex;
+    gap: 18px;
+  }
+
+  .heading_container_cdr {
+    margin-left: 10%;
+  }
+
+  .heading_container_connected,
+  .heading_container_incoming,
+  .heading_container_failed {
+    margin-left: 10%;
+    display: flex;
+    gap: 15px;
+  }
+}
+
 /*************************************************                                                             ******************************************************* */
 /* *************************************************         For smaller mobile screens with max-width: 768px   ********************************************************  */
 /*************************************************                                                             ******************************************************* */
@@ -352,3 +503,44 @@
     gap: 5px;
   }
 }
+
+
+/* ****************** MObile phone ********************I */
+
+
+  @media (max-width: 700px) and (min-width: 300px) {
+    body {
+      overflow: hidden; 
+    }
+  
+    .dashboard_heading {
+      font-size: 11pt;
+      margin-top: 15px;
+    }
+  
+    .card-container {
+      display: block;
+      margin-left: 22%;
+      overflow-y: auto; 
+      max-height: 540px; 
+    }
+  
+    .card {
+      margin-bottom: 15px;
+      width: 200px;
+      height: 120px;
+      padding: 10px;
+    }
+  
+    .card_heading {
+      margin-bottom: 0px;
+      font-size: 12px;
+      margin-left: 20px;
+    }
+  
+    .dashboard-button {
+      margin-top: 10px;
+    }
+  }
+  
+

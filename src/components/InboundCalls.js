@@ -25,10 +25,10 @@ function InboundCallsPage() {
 
     useEffect(() => {
         const currentDate = new Date();
-        const localDate = currentDate.toLocaleDateString('en-CA'); 
+        const localDate = currentDate.toLocaleDateString('en-CA');
         setStartDate(localDate);
         setEndDate(localDate);
-      }, []);
+    }, []);
 
     useEffect(() => {
         const storedManagerId = localStorage.getItem('manager_id');
