@@ -2,7 +2,7 @@
   padding: 10px;
   text-align: center;
   margin-top: -28px;
-  height: 93vh;
+  height: 100vh;
 }
 
 .page_heading {
@@ -373,7 +373,7 @@ td:nth-child(22) {
   padding: 11px;
   text-align: center;
   margin-top: 9px;
-  height: 91vh;
+  height: 100vh;
 }
 
 /**********            *****************************************   Not Connected      *********************************                    ************/
@@ -381,7 +381,7 @@ td:nth-child(22) {
 .NotConnectedCdrPage {
   padding: 12px;
   text-align: center;
-  height: 91vh;
+  height: 100vh;
 }
 
 .notconnectedpage_heading {
@@ -395,7 +395,7 @@ td:nth-child(22) {
 .inboundCdrPage {
   padding: 12px;
   text-align: center;
-  height: 91vh;
+  height: 100vh;
 }
 
 .inboundpage_heading {
@@ -409,7 +409,7 @@ td:nth-child(22) {
 .outboundCdrPage {
   padding: 12px;
   text-align: center;
-  height: 91vh;
+  height: 100vh;
 }
 
 .outboundpage_heading {
@@ -423,7 +423,7 @@ td:nth-child(22) {
 .failedCdrPage {
   padding: 12px;
   text-align: center;
-  height: 91vh;
+  height: 100vh;
 }
 
 .failedpage_heading {
@@ -443,7 +443,7 @@ td:nth-child(22) {
 .missedCdrPage {
   padding: 12px;
   text-align: center;
-  height: 91vh;
+  height: 100vh;
 }
 
 /**************  *******************************************************                   Single Agent Page                   *********************          *************/
@@ -566,7 +566,7 @@ td:nth-child(22) {
     font-size: 10px;
     padding: 4px;
   }
-  
+
   td {
     padding: 4px;
     font-size: 10px;
@@ -599,7 +599,7 @@ td:nth-child(22) {
     font-size: 20px;
     margin-top: 30px;
   }
-  
+
   .missedCdrPage {
     padding: 12px;
     text-align: center;
@@ -610,7 +610,7 @@ td:nth-child(22) {
     font-size: 20px;
     margin-top: 20px;
   }
-  
+
   .ConnectedCdrPage {
     padding: 11px;
     text-align: center;
@@ -623,7 +623,7 @@ td:nth-child(22) {
     text-align: center;
     height: 91vh;
   }
-  
+
   .notconnectedpage_heading {
     font-size: 20px;
     margin-top: 30px;
@@ -634,7 +634,7 @@ td:nth-child(22) {
     text-align: center;
     height: 91vh;
   }
-  
+
   .inboundpage_heading {
     font-size: 20px;
     margin-top: 30px;
@@ -645,7 +645,7 @@ td:nth-child(22) {
     text-align: center;
     height: 91vh;
   }
-  
+
   .outboundpage_heading {
     font-size: 20px;
     margin-top: 30px;
@@ -656,7 +656,7 @@ td:nth-child(22) {
     text-align: center;
     height: 91vh;
   }
-  
+
   .failedpage_heading {
     font-size: 20px;
     margin-top: 30px;
@@ -672,7 +672,7 @@ td:nth-child(22) {
     margin-top: 70px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-  
+
   .label_container {
     margin-bottom: 15px;
   }
@@ -713,47 +713,384 @@ td:nth-child(22) {
 }
 
 @media (max-width: 576px) {
-  .cdr_table {
-    max-height: 400px;
+
+  .NotConnectedCdrPage {
+    height: 100vh;
   }
 
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 720px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
   input[type="date"] {
-    width: 140px;
+    width: 110px;
   }
 
   .buttons-container {
     margin-left: 40%;
+    margin-top: 10px;
   }
 }
 
 
+@media (max-width: 450px) {
 
-
-@media (max-width: 700px) and (min-width: 300px){
-  .cdr_table {
-    max-height: 510px;
+  .NotConnectedCdrPage {
+    height: 100vh;
   }
 
-  .modal {
-    position: fixed;
-    top: 50vh;
-    left: 0%;
-    width: 300px;
-    height: 100px;
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 730px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
   }
 
   .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 0%;
-    max-width: 0px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
     text-align: center;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 675px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 380px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 500px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 575px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 345px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 710px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
   }
 }

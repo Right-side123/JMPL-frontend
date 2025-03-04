@@ -234,7 +234,7 @@
     width: 90px;
   }
 
-  .header_logout_container{
+  .header_logout_container {
     margin-top: 10px;
   }
 }
@@ -305,10 +305,22 @@
   .header_rightside_logo {
     width: 70px;
   }
+
+  .support_page {
+    position: absolute;
+    top: 5.3%;
+    left: 70%;
+    z-index: 2;
+    width: 25%;
+    height: 30%;
+    display: none;
+    background-color: #f4faff;
+  }
+
 }
 
 
-@media (max-width:700px) and (min-width:300px){
+@media (max-width:750px) and (min-width:300px) {
   .header {
     height: 30px;
     padding: 5px 8px;
@@ -327,7 +339,7 @@
   .support_button {
     padding: 4px 10px;
     font-size: 10px;
-    margin-left: 0%
+    margin-left: -5%
   }
 
   .logout_button {
@@ -345,5 +357,21 @@
     gap: 20px;
   }
 
- 
+
+}
+
+@media (max-width:360px) and (min-width:300px) {
+  .support_button {
+    padding: 4px 10px;
+    font-size: 10px;
+    margin-left: 0%
+  }
+
+  .header_logout_container {
+    margin-right: 0px;
+    margin-top: 10px;
+    gap: 20px;
+    width: 150px;
+  }
+
 }

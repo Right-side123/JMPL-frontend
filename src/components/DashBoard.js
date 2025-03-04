@@ -198,12 +198,16 @@ const Dashboard = () => {
   return (
     <div>
       <div className='container_Scroll'>
-        <div>
-          <Header />
-          <div className="dashboard-container">
-            <div className="dashboard-content">
-              <h1 className="dashboard_heading">Your complete contact&nbsp;center solution</h1>
+        <Header />
 
+
+        <div>
+
+          <div className="dashboard-container">
+
+            <div className="dashboard-content">
+
+              <h1 className="dashboard_heading">Your complete contact&nbsp;center solution</h1>
               <div className="card-container">
                 <NavLink to="/agents" className="navlink_link">
                   <div className="card">
