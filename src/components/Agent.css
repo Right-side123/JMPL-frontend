@@ -279,7 +279,7 @@ p {
   }
 }
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   .agent-container {
     height: 64vh;
   }
@@ -343,13 +343,12 @@ p {
     font-size: 12px;
     border-radius: 3px;
   }
-}
+} */
 
 
-@media (max-width: 450px) {
+/* @media (max-width: 450px) {
   .agent-container {
-    /* overflow-x: auto; */
-    /* overflow-y: auto; */
+
     height: 70vh;
   }
 
@@ -397,9 +396,9 @@ p {
   .select_option {
     margin-left: 10px;
   }
-}
+} */
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   .agent-container {
     overflow-x: auto;
     overflow-y: auto;
@@ -450,14 +449,13 @@ p {
   .select_option {
     margin-left: 10px;
   }
-}
+} */
 
 
-@media (max-width: 380px) {
+/* @media (max-width: 380px) {
   .agent-container {
-    /* overflow-x: visible; */
-    /* overflow-y: auto; */
-    height: 59vh;
+    */
+/* height: 59vh;
   }
 
   .searchbox {
@@ -504,13 +502,12 @@ p {
   .select_option {
     margin-left: 10px;
   }
-}
+} */
 
 
-@media (max-width: 360px) {
+/* @media (max-width: 360px) {
   .agent-container {
-    /* overflow-x: auto; */
-    /* overflow-y: auto; */
+  
     height: 63vh;
   }
 
@@ -558,13 +555,11 @@ p {
   .select_option {
     margin-left: 10px;
   }
-}
+} */
 
 
-@media (max-width: 345px) {
+/* @media (max-width: 345px) {
   .agent-container {
-    /* overflow-x: auto; */
-    /* overflow-y: auto; */
     height: 69vh;
   }
 
@@ -612,7 +607,7 @@ p {
   .select_option {
     margin-left: 10px;
   }
-}
+} */
 
 
 
@@ -947,4 +942,434 @@ p {
     font-size: 12px;
     border-radius: 3px;
   }
+}
+
+
+@media (max-width:350px) and (min-width:300px) {
+  .agent-container {
+    width: 98%;
+    margin: 0px auto;
+    height: 69vh;
+    overflow-y: auto;
+    overflow-x: auto
+  }
+  
+  .agent_back {
+    font-size: 16px;
+    margin: 10px 20px 0px 50px;
+  }
+  
+  .top_fields {
+    margin-top: 10px;
+  }
+  
+  .select_type {
+    margin-left: 10px;
+    
+  }
+  
+  .select_option {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .select_option_time {
+    margin-left: -60px;
+  }
+  
+  .searchbox {
+    margin-left: 30px;
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  
+  .agent_dwldbtn {
+    padding: 6px 8px;
+    font-size: 16px;
+    background-color: #ffa444;
+    color: #38346c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .agent-content {
+    padding: 10px;
+    line-height: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  
+  
+  .agentpage_heading {
+    margin-top: 50px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .agents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .agents-table th,
+  .agents-table td {
+    padding: 8px;
+  }
+  
+  .agents-table th {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .agents-table td {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .agents-table tr:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+  }
+  
+
+  .agents-table td[colspan="4"] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  
+  .clickable-row:hover {
+    background-color: #a8aaad;
+  }
+  
+}
+
+
+
+@media (max-width:380px) and (min-width:350px) {
+  .agent-container {
+    width: 98%;
+    margin: 0px auto;
+    height: 60vh;
+    overflow-y: auto;
+    overflow-x: auto
+  }
+  
+  .agent_back {
+    font-size: 16px;
+    margin: 10px 20px 0px 50px;
+  }
+  
+  .top_fields {
+    margin-top: 0px;
+  }
+  
+  .select_type {
+    margin-left: 20px;
+    
+  }
+  
+  .select_option {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .select_option_time {
+    margin-left: -40px;
+  }
+  
+  .searchbox {
+    margin-left: 30px;
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  
+  .agent_dwldbtn {
+    padding: 6px 8px;
+    font-size: 16px;
+    background-color: #ffa444;
+    color: #38346c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .agent-content {
+    padding: 10px;
+    line-height: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  
+  
+  .agentpage_heading {
+    margin-top: 50px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .agents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .agents-table th,
+  .agents-table td {
+    padding: 8px;
+  }
+  
+  .agents-table th {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .agents-table td {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .agents-table tr:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+  }
+  
+
+  .agents-table td[colspan="4"] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  
+  .clickable-row:hover {
+    background-color: #a8aaad;
+  }
+  
+}
+
+
+
+@media (max-width:420px) and (min-width:380px) {
+  .agent-container {
+    width: 98%;
+    margin: 0px auto;
+    height: 70vh;
+    overflow-y: auto;
+    overflow-x: auto
+  }
+  
+  .agent_back {
+    font-size: 16px;
+    margin: 10px 20px 0px 50px;
+  }
+  
+  .top_fields {
+    margin-top: 0px;
+  }
+  
+  .select_type {
+    margin-left: 20px;
+    
+  }
+  
+  .select_option {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .select_option_time {
+    margin-left: -25px;
+  }
+  
+  .searchbox {
+    margin-left: 30px;
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  
+  .agent_dwldbtn {
+    padding: 6px 8px;
+    font-size: 16px;
+    background-color: #ffa444;
+    color: #38346c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .agent-content {
+    padding: 10px;
+    line-height: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  
+  
+  .agentpage_heading {
+    margin-top: 50px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .agents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .agents-table th,
+  .agents-table td {
+    padding: 8px;
+  }
+  
+  .agents-table th {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .agents-table td {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .agents-table tr:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+  }
+  
+
+  .agents-table td[colspan="4"] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  
+  .clickable-row:hover {
+    background-color: #a8aaad;
+  }
+  
+}
+
+
+@media (max-width:450px) and (min-width:420px) {
+  .agent-container {
+    width: 98%;
+    margin: 0px auto;
+    height: 72vh;
+    overflow-y: auto;
+    overflow-x: auto
+  }
+  
+  .agent_back {
+    font-size: 16px;
+    margin: 10px 20px 0px 50px;
+  }
+  
+  .top_fields {
+    margin-top: 0px;
+  }
+  
+  .select_type {
+    margin-left: 20px;
+    
+  }
+  
+  .select_option {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .select_option_time {
+    margin-left: 0px;
+  }
+  
+  .searchbox {
+    margin-left: 30px;
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  
+  .agent_dwldbtn {
+    padding: 6px 8px;
+    font-size: 16px;
+    background-color: #ffa444;
+    color: #38346c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .agent-content {
+    padding: 10px;
+    line-height: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  
+  
+  .agentpage_heading {
+    margin-top: 50px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .agents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .agents-table th,
+  .agents-table td {
+    padding: 8px;
+  }
+  
+  .agents-table th {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .agents-table td {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .agents-table tr:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+  }
+  
+
+  .agents-table td[colspan="4"] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  
+  .clickable-row:hover {
+    background-color: #a8aaad;
+  }
+  
 }

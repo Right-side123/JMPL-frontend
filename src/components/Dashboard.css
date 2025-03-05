@@ -307,7 +307,7 @@ body {
 /* *******************************                                                         ************************************************************* */
 /************************************************************** For mobile screens (smaller than 480px) **************************************** */
 /* *******************************                                                         ************************************************************* */
-
+/* 
 @media (max-width: 480px) {
   .dashboard-container {
     display: block;
@@ -328,7 +328,6 @@ body {
 
   .card {
     height: 180px;
-    /* Adjusted height */
     width: 100%;
     padding: 8px;
   }
@@ -370,44 +369,14 @@ body {
     display: flex;
     gap: 5px;
   }
-}
+} */
 
 
 /* ******************    ******************     *****         ***    **   *  MObile phone  *   **    ***       *****     ***********************     ********************I */
 
 
-@media (max-width: 380px) and (min-width: 300px) {
-  .dashboard_heading {
-    font-size: 11pt;
-    margin-top: 25px;
-  }
 
-  .card-container {
-    margin-top: 25px;
-    display: block;
-    margin-left: 22%;
-    overflow-y: auto;
-    max-height: 550px;
-  }
-
-  .card {
-    margin-bottom: 15px;
-    width: 200px;
-    height: 120px;
-    padding: 10px;
-  }
-
-  .card_heading {
-    margin-bottom: 0px;
-    font-size: 12px;
-    margin-left: 20px;
-  }
-
-  .dashboard-button {
-    margin-top: 10px;
-  }
-}
-
+/* 
 @media (max-width: 400px) and (min-width:390px) {
   .dashboard_heading {
     font-size: 11pt;
@@ -438,9 +407,9 @@ body {
   .dashboard-button {
     margin-top: 10px;
   }
-}
+} */
 
-@media (max-width: 750px) and (min-width: 400px) {
+/* @media (max-width: 750px) and (min-width: 400px) {
   .dashboard_heading {
     font-size: 11pt;
     margin-top: 25px;
@@ -471,9 +440,46 @@ body {
     margin-top: 10px;
   }
 
-}
+} */
 
-@media (max-width: 365px) and (min-width: 300px) {
+
+/* @media (max-width: 390px) and (min-width: 365px) {
+  .dashboard_heading {
+    font-size: 11pt;
+    margin-top: 25px;
+  }
+
+  .card-container {
+    margin-top: 2px;
+    display: block;
+    margin-left: 0px;
+    overflow-y: auto;
+    max-height: 520px;
+    padding-left: 0px;
+
+  }
+
+  .card {
+    margin-bottom: 15px;
+    width: 200px;
+    height: 10px;
+    padding: 0px;
+    margin-left: 13vw;
+    align-content: center;
+  }
+
+  .card_heading {
+    margin-bottom: 0px;
+    font-size: 0px;
+    margin-left: 0px;
+  }
+
+  .dashboard-button {
+    margin-bottom: 20px;
+  }
+} */
+
+/* @media (max-width: 365px) and (min-width: 300px) {
   .card-container {
     margin-top: 25px;
     display: block;
@@ -481,7 +487,7 @@ body {
     overflow-y: auto;
     max-height: 750px;
   }
-}
+} */
 
 
 /* ******************************************** */
@@ -583,7 +589,7 @@ body {
   .dashboard_heading {
     font-size: 18px;
     margin-bottom: 10px;
-    margin-top:0px;
+    margin-top: 0px;
   }
 
   .card_heading {
@@ -613,10 +619,6 @@ body {
     display: flex;
     gap: 20px;
   }
-
-  /* .heading_container_cdr {
-    margin-left: 10%;
-  } */
 
   .heading_container_connected,
   .heading_container_incoming,
@@ -685,9 +687,7 @@ body {
     gap: 20px;
   }
 
-  /* .heading_container_cdr {
-    margin-left: 10%;
-  } */
+
 
   .heading_container_connected,
   .heading_container_incoming,
@@ -754,9 +754,7 @@ body {
     gap: 20px;
   }
 
-  /* .heading_container_cdr {
-    margin-left: 10%;
-  } */
+
 
   .heading_container_connected,
   .heading_container_incoming,
@@ -823,9 +821,6 @@ body {
     gap: 20px;
   }
 
-  /* .heading_container_cdr {
-    margin-left: 10%;
-  } */
 
   .heading_container_connected,
   .heading_container_incoming,
@@ -956,9 +951,6 @@ body {
     gap: 20px;
   }
 
-  /* .heading_container_cdr {
-    margin-left: 10%;
-  } */
 
   .heading_container_connected,
   .heading_container_incoming,
@@ -996,7 +988,7 @@ body {
 
   .dashboard_heading {
     font-size: 18px;
-    margin-bottom: 10px;  
+    margin-bottom: 10px;
     margin-top: 15px;
   }
 
@@ -1028,7 +1020,7 @@ body {
     gap: 20px;
   }
 
-  
+
   .heading_container_connected,
   .heading_container_incoming,
   .heading_container_failed {
@@ -1037,8 +1029,626 @@ body {
     gap: 15px;
   }
 
-  
+
   .heading_container {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+  }
+}
+
+
+
+@media (max-width: 350px) and (min-width:300px) {
+  .dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    background-color: #fffaf3;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .dashboard-content {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    padding: 10px;
+
+  }
+
+  .dashboard_heading {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    overflow-y: auto;
+    margin-bottom: 0px;
+    max-height: 700px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+  }
+
+  .card {
+    height: 130px;
+    width: 220px;
+    padding: 10px;
+  }
+
+  .card p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-button {
+    padding: 8px 15px;
+    margin-top: 0px;
+  }
+
+  .agentpng {
+    width: 30px;
+    margin-top: 0px;
+  }
+
+  .card_heading {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+
+  .heading_container {
+    margin-left: 35%;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .heading_container_cdr {
+    margin-left: 20%;
+    gap: 10px;
+  }
+
+  .cdrpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .cdr_png {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_connected {
+    position: relative;
+    margin-left: 15%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .incomingpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_incoming {
+    position: relative;
+    margin-left: 18%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .failedpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_failed {
+    position: relative;
+    margin-left: 20%;
+    display: flex;
+    gap: 30px;
+  }
+}
+
+
+
+@media (max-width: 380px) and (min-width:350px) {
+  .dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    background-color: #fffaf3;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .dashboard-content {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    padding: 10px;
+
+  }
+
+  .dashboard_heading {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    overflow-y: auto;
+    margin-bottom: 0px;
+    max-height: 500px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+  }
+
+  .card {
+    height: 130px;
+    width: 220px;
+    padding: 10px;
+  }
+
+  .card p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-button {
+    padding: 8px 15px;
+    margin-top: 0px;
+  }
+
+  .agentpng {
+    width: 30px;
+    margin-top: 0px;
+  }
+
+  .card_heading {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+
+  .heading_container {
+    margin-left: 35%;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .heading_container_cdr {
+    margin-left: 20%;
+    gap: 10px;
+  }
+
+  .cdrpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .cdr_png {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_connected {
+    position: relative;
+    margin-left: 15%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .incomingpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_incoming {
+    position: relative;
+    margin-left: 18%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .failedpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_failed {
+    position: relative;
+    margin-left: 20%;
+    display: flex;
+    gap: 30px;
+  }
+}
+
+
+
+@media (max-width: 420px) and (min-width:380px) {
+  .dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    background-color: #fffaf3;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .dashboard-content {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    padding: 10px;
+
+  }
+
+  .dashboard_heading {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    overflow-y: auto;
+    margin-bottom: 0px;
+    max-height: 720px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+  }
+
+  .card {
+    height: 130px;
+    width: 220px;
+    padding: 10px;
+  }
+
+  .card p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-button {
+    padding: 8px 15px;
+    margin-top: 0px;
+  }
+
+  .agentpng {
+    width: 30px;
+    margin-top: 0px;
+  }
+
+  .card_heading {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+
+  .heading_container {
+    margin-left: 35%;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .heading_container_cdr {
+    margin-left: 20%;
+    gap: 10px;
+  }
+
+  .cdrpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .cdr_png {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_connected {
+    position: relative;
+    margin-left: 15%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .incomingpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_incoming {
+    position: relative;
+    margin-left: 18%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .failedpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_failed {
+    position: relative;
+    margin-left: 20%;
+    display: flex;
+    gap: 30px;
+  }
+}
+
+
+@media (max-width: 450px) and (min-width:420px) {
+  .dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    background-color: #fffaf3;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .dashboard-content {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    padding: 10px;
+
+  }
+
+  .dashboard_heading {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    overflow-y: auto;
+    margin-bottom: 0px;
+    max-height: 750px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+  }
+
+  .card {
+    height: 130px;
+    width: 250px;
+    padding: 10px;
+  }
+
+  .card p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-button {
+    padding: 8px 15px;
+    margin-top: 0px;
+  }
+
+  .agentpng {
+    width: 30px;
+    margin-top: 0px;
+  }
+
+  .card_heading {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+
+  .heading_container {
+    margin-left: 35%;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .heading_container_cdr {
+    margin-left: 20%;
+    gap: 10px;
+  }
+
+  .cdrpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .cdr_png {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_connected {
+    position: relative;
+    margin-left: 15%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .incomingpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_incoming {
+    position: relative;
+    margin-left: 18%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .failedpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_failed {
+    position: relative;
+    margin-left: 20%;
+    display: flex;
+    gap: 30px;
+  }
+}
+
+
+@media (max-width: 750px) and (min-width:450px) {
+  .dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    background-color: #fffaf3;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .dashboard-content {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    padding: 10px;
+
+  }
+
+  .dashboard_heading {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    overflow-y: auto;
+    margin-bottom: 0px;
+    max-height: 750px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+  }
+
+  .card {
+    height: 130px;
+    width: 250px;
+    padding: 10px;
+  }
+
+  .card p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-button {
+    padding: 8px 15px;
+    margin-top: 0px;
+  }
+
+  .agentpng {
+    width: 30px;
+    margin-top: 0px;
+  }
+
+  .card_heading {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+
+  .heading_container {
+    margin-left: 35%;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .heading_container_cdr {
+    margin-left: 20%;
+    gap: 10px;
+  }
+
+  .cdrpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .cdr_png {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_connected {
+    position: relative;
+    margin-left: 15%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .incomingpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_incoming {
+    position: relative;
+    margin-left: 18%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .failedpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_failed {
+    position: relative;
+    margin-left: 20%;
+    display: flex;
+    gap: 30px;
   }
 }

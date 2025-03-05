@@ -1350,6 +1350,7 @@ td:nth-child(22) {
 
   .page_heading {
     font-size: 20px;
+    margin-top: 80px;
   }
 
   .select_option {
@@ -1473,11 +1474,12 @@ td:nth-child(22) {
   }
 
   .cdr_table {
-    max-height: 710px;
+    max-height: 680px;
   }
 
   .page_heading {
     font-size: 20px;
+    margin-top: 90px;
   }
 
   .select_option {
