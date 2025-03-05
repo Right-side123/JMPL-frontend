@@ -462,23 +462,6 @@ td:nth-child(22) {
 /*   ******************                 Media Queries for Responsiveness                     *************************************/
 /* ******************************************************************************************************************************* */
 
-@media (max-width: 1200px) {
-  .cdr_buttons_container {
-    margin-right: 30px;
-  }
-
-  .buttons-container {
-    margin-left: 80%;
-  }
-
-  .cdr_table {
-    max-height: 600px;
-  }
-
-  input[type="date"] {
-    width: 180px;
-  }
-}
 
 @media (max-width: 1024px) {
   .cdr_buttons_container {
@@ -676,6 +659,446 @@ td:nth-child(22) {
   .label_container {
     margin-bottom: 15px;
   }
+}
+
+
+
+@media (max-width: 1190px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    height: 30px;
+    width: 90px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+
+@media (max-width: 1290px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    height: 30px;
+    width: 90px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+
+
+@media (max-width: 1390px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    height: 30px;
+    width: 90px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+
+@media (max-width: 1490px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    height: 30px;
+    width: 90px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+
+@media (max-width: 1590px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    height: 30px;
+    width: 90px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+}
+
+
+@media (max-width: 1690px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 380px;
+  }
+
+  .page_heading {
+    font-size: 16px;
+  }
+
+  thead th {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  td {
+    padding: 4px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .buttons-container {
+    margin-left: 85%;
+  }
+
+  .dwldbtn_back {
+    font-size: 10px;
+    height: 30px;
+    width: 60px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .cdr_back_dwldbtn {
+    font-size: 14px;
+    height: 30px;
+    width: 90px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
 }
 
 @media (max-width: 992px) {
