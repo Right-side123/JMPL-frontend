@@ -54,7 +54,7 @@ function ConnectedCallsPage() {
 
 
         try {
-            const response = await axios.get(`${API_URL}/connectedcalls`, {
+            const response = await axios.get(`${API_URL}/connectedcalls/${managerId}`, {
                 params: {
                     startDate,
                     endDate,

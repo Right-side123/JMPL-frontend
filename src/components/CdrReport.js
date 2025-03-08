@@ -54,7 +54,7 @@ function CdrReportPage() {
         setNoDataMessage('');
 
         try {
-            const response = await axios.get(`${API_URL}/customcdr`, {
+            const response = await axios.get(`${API_URL}/customcdr/${managerId}`, {
                 params: {
                     startDate,
                     endDate,

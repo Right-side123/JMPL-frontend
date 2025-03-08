@@ -25,10 +25,10 @@ function OutboundCallsPage() {
 
     useEffect(() => {
         const currentDate = new Date();
-        const localDate = currentDate.toLocaleDateString('en-CA'); 
+        const localDate = currentDate.toLocaleDateString('en-CA');
         setStartDate(localDate);
         setEndDate(localDate);
-      }, []);
+    }, []);
 
     useEffect(() => {
         const storedManagerId = localStorage.getItem('manager_id');
@@ -53,7 +53,7 @@ function OutboundCallsPage() {
         setNoDataMessage('');
 
         try {
-            const response = await axios.get(`${API_URL}/outbound`, {
+            const response = await axios.get(`${API_URL}/outbound/${managerId}`, {
                 params: {
                     startDate,
                     endDate,
@@ -116,7 +116,7 @@ function OutboundCallsPage() {
             'Customer-Disconnected-At': formatDate(cdr.customer_disconnected_at),
             'Agent-Disposition': cdr.agent_disposition,
             'Customer-Disposition': cdr.customer_disposition
-            
+
 
         }));
         const sheetData = [headers, ...dataWithHeaders.map(row => Object.values(row))];

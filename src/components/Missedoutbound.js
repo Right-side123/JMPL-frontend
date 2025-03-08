@@ -32,10 +32,10 @@ function MissedOutboundCallsPage() {
 
     useEffect(() => {
         const currentDate = new Date();
-        const localDate = currentDate.toLocaleDateString('en-CA'); 
+        const localDate = currentDate.toLocaleDateString('en-CA');
         setStartDate(localDate);
         setEndDate(localDate);
-      }, []);
+    }, []);
 
     useEffect(() => {
         const storedManagerId = localStorage.getItem('manager_id');
@@ -62,7 +62,7 @@ function MissedOutboundCallsPage() {
         // const finalEndDate = startDate === endDate ? startDate + ' 23:59:59' : endDate;
 
         try {
-            const response = await axios.get(`${API_URL}/missedoutboundcalls/`, {
+            const response = await axios.get(`${API_URL}/missedoutboundcalls/${managerId}`, {
                 params: {
                     // startDate: startDate,
                     // endDate: finalEndDate,
@@ -126,7 +126,7 @@ function MissedOutboundCallsPage() {
             'Customer-Answered-At': formatDate(cdr.customer_answered_at),
             'Customer-Disconnected-At': formatDate(cdr.customer_disconnected_at),
             'Agent-Disposition': cdr.agent_disposition,
-            'Customer-Disposition': cdr.customer_disposition        
+            'Customer-Disposition': cdr.customer_disposition
 
         }));
         const sheetData = [headers, ...dataWithHeaders.map(row => Object.values(row))];

@@ -34,7 +34,7 @@ const Dashboard = () => {
         return;
       }
       try {
-        const response = await fetch(`${API_URL}/agents`);
+        const response = await fetch(`${API_URL}/agents/${managerId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch agents');
         }
@@ -58,7 +58,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch(`${API_URL}/totalcdr`);
+        const response = await fetch(`${API_URL}/totalcdr/${managerId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -80,7 +80,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch(`${API_URL}/totalinbound`);
+        const response = await fetch(`${API_URL}/totalinbound/${managerId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -100,7 +100,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch(`${API_URL}/totaloutbound`);
+        const response = await fetch(`${API_URL}/totaloutbound/${managerId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -120,7 +120,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch(`${API_URL}/totalconnected`);
+        const response = await fetch(`${API_URL}/totalconnected/${managerId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -140,7 +140,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch(`${API_URL}/totalnotconnected`);
+        const response = await fetch(`${API_URL}/totalnotconnected/${managerId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -160,7 +160,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch(`${API_URL}/totalmissedoutbound/`);
+        const response = await fetch(`${API_URL}/totalmissedoutbound/${managerId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }
@@ -180,7 +180,7 @@ const Dashboard = () => {
       if (!managerId) return;
 
       try {
-        const response = await fetch(`${API_URL}/totalmissed`);
+        const response = await fetch(`${API_URL}/totalmissed/${managerId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch total CDR count');
         }

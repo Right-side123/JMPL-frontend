@@ -25,10 +25,10 @@ function NotConnectedCallsPage() {
 
     useEffect(() => {
         const currentDate = new Date();
-        const localDate = currentDate.toLocaleDateString('en-CA'); 
+        const localDate = currentDate.toLocaleDateString('en-CA');
         setStartDate(localDate);
         setEndDate(localDate);
-      }, []);
+    }, []);
 
     useEffect(() => {
         const storedManagerId = localStorage.getItem('manager_id');
@@ -53,7 +53,7 @@ function NotConnectedCallsPage() {
         setNoDataMessage('');
 
         try {
-            const response = await axios.get(`${API_URL}/notconnectedcalls/`, {
+            const response = await axios.get(`${API_URL}/notconnectedcalls/${managerId}`, {
                 params: {
                     startDate,
                     endDate,
