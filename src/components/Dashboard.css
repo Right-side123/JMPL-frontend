@@ -1310,7 +1310,7 @@ body {
   .dashboard_heading {
     font-size: 15px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
   .card-container {
@@ -1320,7 +1320,7 @@ body {
     gap: 15px;
     overflow-y: auto;
     margin-bottom: 0px;
-    max-height: 500px;
+    max-height: 600px;
     margin-bottom: 0px;
     margin-left: 30px;
   }
@@ -1417,7 +1417,7 @@ body {
     justify-content: center;
     align-items: center;
     height: auto;
-    min-height: 100vh;
+    min-height: 90vh;
     background-color: #fffaf3;
     padding: 10px;
     overflow-y: auto;
@@ -1434,7 +1434,7 @@ body {
   .dashboard_heading {
     font-size: 15px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 0px;
   }
 
   .card-container {
@@ -1444,7 +1444,7 @@ body {
     gap: 15px;
     overflow-y: auto;
     margin-bottom: 0px;
-    max-height: 650px;
+    max-height: 550px;
     margin-bottom: 0px;
     margin-left: 30px;
   }
@@ -1541,7 +1541,7 @@ body {
     justify-content: center;
     align-items: center;
     height: auto;
-    min-height: 100vh;
+    min-height: 90vh;
     background-color: #fffaf3;
     padding: 10px;
     overflow-y: auto;
@@ -1558,7 +1558,7 @@ body {
   .dashboard_heading {
     font-size: 15px;
     font-weight: bold;
-    margin-top: 0px;
+    margin-top: 10px;
   }
 
   .card-container {
@@ -1568,7 +1568,7 @@ body {
     gap: 10px;
     overflow-y: auto;
     margin-bottom: 0px;
-    max-height: 700px;
+    max-height: 720px;
     margin-bottom: 0px;
     margin-left: 30px;
   }
@@ -1663,7 +1663,7 @@ body {
     justify-content: center;
     align-items: center;
     height: auto;
-    min-height: 100vh;
+    min-height: 90vh;
     background-color: #fffaf3;
     padding: 10px;
     overflow-y: auto;
@@ -1690,7 +1690,7 @@ body {
     gap: 15px;
     overflow-y: auto;
     margin-bottom: 0px;
-    max-height: 710px;
+    max-height: 770px;
     margin-bottom: 0px;
     margin-left: 30px;
   }
@@ -1802,7 +1802,7 @@ body {
   .dashboard_heading {
     font-size: 15px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
   .card-container {
