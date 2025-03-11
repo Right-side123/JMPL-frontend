@@ -1037,7 +1037,133 @@ body {
 
 
 
-@media (max-width: 350px) and (min-width:300px) {
+@media (max-width: 340px) and (min-width:300px) {
+  .dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    background-color: #fffaf3;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .dashboard-content {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    padding: 10px;
+
+  }
+
+  .dashboard_heading {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    overflow-y: auto;
+    margin-bottom: 0px;
+    max-height: 700px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+  }
+
+  .card {
+    height: 130px;
+    width: 220px;
+    padding: 10px;
+  }
+
+  .card p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-button {
+    padding: 8px 15px;
+    margin-top: 0px;
+  }
+
+  .agentpng {
+    width: 30px;
+    margin-top: 0px;
+  }
+
+  .card_heading {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+
+  .heading_container {
+    margin-left: 35%;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .heading_container_cdr {
+    margin-left: 20%;
+    gap: 10px;
+  }
+
+  .cdrpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .cdr_png {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_connected {
+    position: relative;
+    margin-left: 15%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .incomingpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+  }
+
+  .heading_container_incoming {
+    position: relative;
+    margin-left: 18%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .failedpng {
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+  }
+
+  .heading_container_failed {
+    position: relative;
+    margin-left: 20%;
+    display: flex;
+    gap: 30px;
+  }
+}
+
+
+
+
+
+@media (max-width: 350px) and (min-width:340px) {
   .dashboard-container {
     display: flex;
     justify-content: center;
@@ -1308,7 +1434,7 @@ body {
   .dashboard_heading {
     font-size: 15px;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .card-container {
@@ -1432,7 +1558,7 @@ body {
   .dashboard_heading {
     font-size: 15px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
   .card-container {
@@ -1471,7 +1597,7 @@ body {
   .card_heading {
     font-size: 14px;
     font-weight: bold;
-    margin-top: 0px;
+    margin-top:10px;
   }
 
   .heading_container {
@@ -1554,7 +1680,7 @@ body {
   .dashboard_heading {
     font-size: 15px;
     font-weight: bold;
-    margin-top: 45px;
+    margin-top: 10px;
   }
 
   .card-container {

@@ -1637,3 +1637,52 @@ td:nth-child(22) {
     width: 90%;
   }
 }
+
+
+@media (max-width: 340px) {
+  .NotConnectedCdrPage,
+  .ConnectedCdrPage,
+  .inboundCdrPage,
+  .outboundCdrPage,
+  .failedCdrPage,
+  .missedCdrPage {
+    height: 770px;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 770px;
+  }
+
+  .cdr_table {
+    max-height: 590px;
+  }
+
+  .page_heading {
+    font-size: 18px;
+    margin-top: 80px;
+  }
+
+  .select_option {
+    margin-left: 8px;
+    margin-right: 70px;
+  }
+
+  .select_time {
+    margin-left: 15px;
+  }
+
+  input[type="date"] {
+    width: 100px;
+  }
+
+  .buttons-container {
+    margin-left: 35%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 85%;
+  }
+}

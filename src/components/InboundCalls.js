@@ -54,7 +54,7 @@ function InboundCallsPage() {
 
 
         try {
-            const response = await axios.get(`${API_URL}/inbound/`, {
+            const response = await axios.get(`${API_URL}/inbound/${managerId}`, {
                 params: {
                     startDate,
                     endDate,

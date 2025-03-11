@@ -55,7 +55,7 @@ function MissedCallsPage() {
         // const finalEndDate = startDate === endDate ? startDate + ' 23:59:59' : endDate;
 
         try {
-            const response = await axios.get(`${API_URL}/missedcalls/`, {
+            const response = await axios.get(`${API_URL}/missedcalls/${managerId}`, {
                 params: {
                     // startDate: startDate,
                     // endDate: finalEndDate,
