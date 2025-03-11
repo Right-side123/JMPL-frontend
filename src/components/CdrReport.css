@@ -1246,6 +1246,72 @@ td:nth-child(22) {
   }
 }
 
+
+
+@media (max-width: 420px) {
+
+  .NotConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .ConnectedCdrPage {
+    height: 100vh;
+  }
+
+  .inboundCdrPage {
+    height: 100vh;
+  }
+
+  .outboundCdrPage {
+    height: 100vh;
+  }
+
+  .failedCdrPage {
+    height: 100vh;
+  }
+
+  .missedCdrPage {
+    height: 100vh;
+  }
+
+  .CdrReportPage {
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .cdr_table {
+    max-height: 710px;
+  }
+
+  .page_heading {
+    font-size: 20px;
+  }
+
+  .select_option {
+    margin-left: 10px;
+    margin-right: 80px;
+  }
+
+  .select_time {
+    margin-left: 18px;
+  }
+
+
+  input[type="date"] {
+    width: 110px;
+  }
+
+  .buttons-container {
+    margin-left: 40%;
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
 @media (max-width: 400px) {
 
   .NotConnectedCdrPage {
@@ -1279,7 +1345,7 @@ td:nth-child(22) {
   }
 
   .cdr_table {
-    max-height: 675px;
+    max-height: 660px;
   }
 
   .page_heading {
@@ -1345,12 +1411,12 @@ td:nth-child(22) {
   }
 
   .cdr_table {
-    max-height: 500px;
+    max-height: 480px;
   }
 
   .page_heading {
     font-size: 20px;
-    margin-top: 80px;
+    margin-top: 65px;
   }
 
   .select_option {
