@@ -1541,7 +1541,7 @@ body {
     justify-content: center;
     align-items: center;
     height: auto;
-    min-height: 90vh;
+    min-height: 95vh;
     background-color: #fffaf3;
     padding: 10px;
     overflow-y: auto;
@@ -1663,7 +1663,7 @@ body {
     justify-content: center;
     align-items: center;
     height: auto;
-    min-height: 90vh;
+    min-height: 100vh;
     background-color: #fffaf3;
     padding: 10px;
     overflow-y: auto;
@@ -1680,17 +1680,17 @@ body {
   .dashboard_heading {
     font-size: 15px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 0px;
   }
 
   .card-container {
     display: flex;
     flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 10px;
     overflow-y: auto;
     margin-bottom: 0px;
-    max-height: 770px;
+    max-height: 650px;
     margin-bottom: 0px;
     margin-left: 30px;
   }
