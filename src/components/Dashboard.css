@@ -1540,7 +1540,7 @@ body {
     justify-content: center;
     align-items: center;
     height: auto;
-    min-height: 100vh;
+    min-height: 90vh;
     background-color: #fffaf3;
     padding: 10px;
     overflow-y: auto;
@@ -1567,7 +1567,7 @@ body {
     gap: 15px;
     overflow-y: auto;
     max-height: 550px;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     margin-left: 30px;
   }
 
