@@ -1557,18 +1557,17 @@ body {
   .dashboard_heading {
     font-size: 15px;
     font-weight: bold;
-    margin-top: 0px;
+    margin-bottom: 5px;
   }
 
   .card-container {
     display: flex;
     flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 5px;
     overflow-y: auto;
-    margin-bottom: 0px;
-    max-height: 620px;
-    margin-bottom: 0px;
+    max-height: 580px;
+    margin-bottom: 50px;
     margin-left: 30px;
   }
 
