@@ -1410,7 +1410,7 @@ body {
 
 
 
-@media (max-width: 365px) and (min-width:350px) {
+@media (max-width: 360px) and (min-width:350px) {
   .dashboard-container {
     display: flex;
     justify-content: center;
@@ -1443,7 +1443,7 @@ body {
     gap: 15px;
     overflow-y: auto;
     margin-bottom: 0px;
-    max-height: 500px;
+    max-height: 700px;
     margin-bottom: 0px;
     margin-left: 30px;
   }
@@ -1534,13 +1534,13 @@ body {
 
 
 
-@media (max-width: 380px) and (min-width:365px) {
+@media (max-width: 380px) and (min-width:360px) {
   .dashboard-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
-    min-height: 90vh;
+    min-height: 100vh;
     background-color: #fffaf3;
     padding: 10px;
     overflow-y: auto;
@@ -1567,7 +1567,7 @@ body {
     gap: 15px;
     overflow-y: auto;
     margin-bottom: 0px;
-    max-height: 550px;
+    max-height: 620px;
     margin-bottom: 0px;
     margin-left: 30px;
   }
