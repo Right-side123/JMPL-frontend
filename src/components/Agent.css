@@ -945,7 +945,7 @@ p {
 }
 
 
-@media (max-width:350px) and (min-width:300px) {
+@media (max-width:360px) and (min-width:300px) {
   .agent-container {
     width: 98%;
     margin: 0px auto;
@@ -1053,11 +1053,11 @@ p {
 
 
 
-@media (max-width:380px) and (min-width:350px) {
+@media (max-width:380px) and (min-width:360px) {
   .agent-container {
     width: 98%;
     margin: 0px auto;
-    height: 60vh;
+    height: 55vh;
     overflow-y: auto;
     overflow-x: auto
   }
@@ -1114,7 +1114,7 @@ p {
   
   
   .agentpage_heading {
-    margin-top: 50px;
+    margin-top: 30px;
     text-align: center;
     color: #333;
   }
@@ -1122,7 +1122,7 @@ p {
   .agents-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 0px;
     border-radius: 5px;
   }
   

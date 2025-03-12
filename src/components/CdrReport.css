@@ -231,7 +231,7 @@ td:nth-child(22) {
   overflow-x: auto;
   overflow-y: auto;
   display: block;
-  max-height: 750px;
+  max-height: 740px;
 }
 
 .no-data-message {
