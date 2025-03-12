@@ -1540,7 +1540,7 @@ body {
     justify-content: center;
     align-items: center;
     height: auto;
-    min-height: 90vh;
+    min-height: 100vh;
     background-color: #fffaf3;
     padding: 10px;
     overflow-y: auto;
@@ -1566,8 +1566,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     overflow-y: auto;
-    max-height: 550px;
-    margin-bottom: 0px;
+    max-height: 500px;
+    margin-bottom: 80px;
     margin-left: 30px;
   }
 
