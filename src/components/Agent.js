@@ -339,6 +339,7 @@ const AgentPage = () => {
   }, []);
 
   useEffect(() => {
+    if (!managerId || !startDate || !endDate) return;
     const fetchAgents = async () => {
       if (!managerId) {
         setError('Manager ID is missing');

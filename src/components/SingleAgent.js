@@ -87,8 +87,9 @@ const AgentDetailPage = () => {
                 setCdrData(response.data.cdr_data);
                 setShowDateSelector(false);
             } else {
-                setNoDataMessage('No data available');
+                setNoDataMessage('No Record Found');
                 setCdrData([]);
+                setShowDateSelector(false);
             }
         } catch (err) {
             console.error('Error fetching CDR data:', err);
@@ -261,7 +262,7 @@ const AgentDetailPage = () => {
 
                 {noDataMessage && (
                     <div>
-                        <p className="no_data_message">{noDataMessage}</p>
+                        <p className="no-data-message">{noDataMessage}</p>
                         <button onClick={handleBack} className='cdr_back_dwldbtn'>Back</button>
                     </div>
                 )}

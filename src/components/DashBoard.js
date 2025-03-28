@@ -22,7 +22,7 @@ const Dashboard = () => {
   const [notConnectedCalls, setNotConnectedCalls] = useState([]);
   const [totalInbound, setTotalInbound] = useState([]);
   const [outgoingCalls, setOutgoingCalls] = useState([]);
-  const [failedCalls, setFailedCalls] = useState([]);
+  const [missedOutboundCall, setMissedOutboundCall] = useState([]);
   const [missedCalls, setMissedCalls] = useState([]);
   const managerId = localStorage.getItem('manager_id');
 
@@ -48,7 +48,7 @@ const Dashboard = () => {
     };
 
     fetchAgents();
-  });
+  }, [managerId]);
 
 
 
@@ -70,7 +70,7 @@ const Dashboard = () => {
     };
 
     fetchTotalCdrCount();
-  });
+  }, [managerId]);
 
 
   // Fetch total inbound 
@@ -92,7 +92,7 @@ const Dashboard = () => {
     };
 
     fetchTotalCdrCount();
-  });
+  }, [managerId]);
 
 
   useEffect(() => {
@@ -112,7 +112,7 @@ const Dashboard = () => {
     };
 
     fetchTotalCdrCount();
-  });
+  }, [managerId]);
 
 
   useEffect(() => {
@@ -132,7 +132,7 @@ const Dashboard = () => {
     };
 
     fetchTotalCdrCount();
-  });
+  }, [managerId]);
 
 
   useEffect(() => {
@@ -152,7 +152,7 @@ const Dashboard = () => {
     };
 
     fetchTotalCdrCount();
-  });
+  }, [managerId]);
 
 
   useEffect(() => {
@@ -165,14 +165,14 @@ const Dashboard = () => {
           throw new Error('Failed to fetch total CDR count');
         }
         const data = await response.json();
-        setFailedCalls(data.total_cdr_count);
+        setMissedOutboundCall(data.total_cdr_count);
       } catch (err) {
         console.error(err);
       }
     };
 
     fetchTotalCdrCount();
-  });
+  }, [managerId]);
 
 
   useEffect(() => {
@@ -215,7 +215,7 @@ const Dashboard = () => {
                       <span className='card_heading'>Agents</span>
                       <img src={agentimg} alt='agent' className='agentpng' />
                     </div>
-                    <p>Total agents: {agents.length}</p>
+                    <p>Total: {agents.length}</p>
                     <button className="dashboard-button">Click here</button>
                   </div>
                 </NavLink>
@@ -225,7 +225,7 @@ const Dashboard = () => {
                       <span className='card_heading'>Custom CDR</span>
                       <img src={cdrimg} alt='cdr' className='cdr_png' />
                     </div>
-                    <p>Total CDR: {totalCdr}</p>
+                    <p>Total Records: {totalCdr}</p>
 
                     <button className="dashboard-button">Click here</button>
 
@@ -237,7 +237,7 @@ const Dashboard = () => {
                       <span className='card_heading'>Connected Calls</span>
                       <img src={connectedimg} alt='connected' className='cdrpng' />
                     </div>
-                    <p>Total connected call's: {connectedCalls} </p>
+                    <p>Total Records: {connectedCalls} </p>
 
                     <button className="dashboard-button">Click here</button>
 
@@ -249,7 +249,7 @@ const Dashboard = () => {
                       <span className='card_heading'>Not Connected Calls</span>
                       <img src={notconnectedimg} alt='notconnected' className='cdrpng' />
                     </div>
-                    <p>Total not connected call's: {notConnectedCalls}</p>
+                    <p>Total Records: {notConnectedCalls}</p>
 
                     <button className="dashboard-button">Click here</button>
 
@@ -262,7 +262,7 @@ const Dashboard = () => {
                       <img src={incomingimg} alt='incoming' className='incomingpng' />
                     </div>
                     {/* <h3>Incoming Calls</h3> */}
-                    <p>Total incoming call's: {totalInbound}</p>
+                    <p>Total Records: {totalInbound}</p>
 
                     <button className="dashboard-button">Click here</button>
 
@@ -275,7 +275,7 @@ const Dashboard = () => {
                       <img src={outgoingimg} alt='outgoing' className='incomingpng' />
                     </div>
                     {/* <h3>Outgoing Calls</h3> */}
-                    <p>Total outgoing call's: {outgoingCalls}</p>
+                    <p>Total Records: {outgoingCalls}</p>
 
                     <button className="dashboard-button">Click here</button>
 
@@ -288,7 +288,7 @@ const Dashboard = () => {
                       <img src={missedimg} alt='failed' className='failedpng' />
                     </div>
                     {/* <h3>Failed Calls</h3> */}
-                    <p>Total missed call's: {missedCalls}</p>
+                    <p>Total Records: {missedCalls}</p>
 
                     <button className="dashboard-button">Click here</button>
 
@@ -301,7 +301,7 @@ const Dashboard = () => {
                       <img src={missedoutgoingimg} alt='failed' className='failedpng' />
                     </div>
                     {/* <h3>Failed Calls</h3> */}
-                    <p>Total failed call's: {failedCalls}</p>
+                    <p>Total Records: {missedOutboundCall}</p>
 
                     <button className="dashboard-button">Click here</button>
 
@@ -316,7 +316,6 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-
       </div>
       <Footer />
     </div>
